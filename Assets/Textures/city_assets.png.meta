@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 56391687f5edf0842887dc9e9973c401
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 4_way
+    21300002: dead_end
+    21300004: thru_way
+    21300006: turn
+    21300008: t_way
+    21300010: grass_tile
+    21300012: grass_wide
+    21300014: sky_scraper
+    21300016: brick_building
+    21300018: city_limit
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 4_way
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1624
+        width: 409
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dead_end
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1624
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thru_way
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1624
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: turn
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1624
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: t_way
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1200
+        width: 409
+        height: 409
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grass_tile
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1202
+        width: 404
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grass_wide
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1203
+        width: 804
+        height: 403
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sky_scraper
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 424
+        width: 383
+        height: 767
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brick_building
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 812
+        width: 383
+        height: 379
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: city_limit
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 1929
+        width: 50
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
