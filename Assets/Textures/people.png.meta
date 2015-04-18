@@ -6,6 +6,8 @@ TextureImporter:
     21300002: press_0_body
     21300004: press_0_arm
     21300006: press_0_leg
+    21300008: camera
+    21300010: camera_flash
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -70,9 +72,9 @@ TextureImporter:
     - name: press_0_arm
       rect:
         serializedVersion: 2
-        x: 191
+        x: 190
         y: 445
-        width: 27
+        width: 28
         height: 65
       alignment: 9
       pivot: {x: .478997111, y: .930405378}
@@ -81,11 +83,31 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 225
-        y: 454
+        y: 453
         width: 30
-        height: 57
+        height: 58
       alignment: 9
       pivot: {x: .506301343, y: .907905996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: camera
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 401
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: camera_flash
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 404
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

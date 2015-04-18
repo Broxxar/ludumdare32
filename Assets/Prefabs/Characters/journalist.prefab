@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431574}
   m_Layer: 0
-  m_Name: view_finder
+  m_Name: view
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &156014
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 456014}
+  - 212: {fileID: 21256014}
+  m_Layer: 9
+  m_Name: camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &190684
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +75,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 490684}
   - 114: {fileID: 11490696}
+  - 95: {fileID: 9556014}
+  - 58: {fileID: 5829742}
+  - 114: {fileID: 11471616}
+  - 50: {fileID: 5087662}
   m_Layer: 9
   m_Name: journalist
   m_TagString: Untagged
@@ -162,6 +182,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &198902
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498902}
+  - 212: {fileID: 21298902}
+  m_Layer: 9
+  m_Name: camera_flash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &431574
 Transform:
   m_ObjectHideFlags: 1
@@ -200,6 +236,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431574}
   m_RootOrder: 1
+--- !u!4 &456014
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156014}
+  m_LocalRotation: {x: 0, y: 0, z: -.5, w: .866025388}
+  m_LocalPosition: {x: .0410000011, y: -.535000026, z: -.00999999978}
+  m_LocalScale: {x: .75, y: .75, z: .75}
+  m_Children:
+  - {fileID: 498902}
+  m_Father: {fileID: 490696}
+  m_RootOrder: 0
 --- !u!4 &490684
 Transform:
   m_ObjectHideFlags: 1
@@ -207,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26999998, y: .769999981, z: .769999981}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490692}
@@ -288,9 +337,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: .192642882, w: .981269002}
   m_LocalPosition: {x: .175999999, y: .486000001, z: .0299999993}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 456014}
   m_Father: {fileID: 490688}
   m_RootOrder: 2
+--- !u!4 &498902
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.00999999978, y: -.0209999997, z: -.061999999}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 456014}
+  m_RootOrder: 0
 --- !u!20 &2031578
 Camera:
   m_ObjectHideFlags: 1
@@ -350,6 +412,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131578}
   m_Mesh: {fileID: 0}
+--- !u!50 &5087662
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190684}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &5829742
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190684}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .5
+  m_Center: {x: 0, y: .5}
+--- !u!95 &9556014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c5bc217407834d4eb06ae566696f887, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11431576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,17 +466,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     serializedVersion: 2
-    x: -2.38256931
-    y: 1.70749998
+    x: -3.65256906
+    y: .9375
     width: 7.30513668
     height: 6.0625
   edges:
   - parent: {fileID: 0}
     pointA:
-      position: {x: -2.38256907, y: 6.53011942, z: .769999981}
+      position: {x: -3.65256906, y: 5.76011944, z: 0}
       angle: 0
     pointB:
-      position: {x: -1.98134947, y: 6.81269026, z: .769999981}
+      position: {x: -3.25134945, y: 6.04269028, z: 0}
       angle: 0
     normal: {x: -.0408970788, y: .999163389, z: 0}
     direction: {x: -.999163389, y: -.0408970788, z: 0}
@@ -382,10 +485,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: -1.98134947, y: 6.81269026, z: .769999981}
+      position: {x: -3.25134945, y: 6.04269028, z: 0}
       angle: 0
     pointB:
-      position: {x: -1.55838156, y: 7.06152678, z: .769999981}
+      position: {x: -2.82838154, y: 6.29152679, z: 0}
       angle: 0
     normal: {x: -.0354433022, y: .999371707, z: 0}
     direction: {x: -.999371707, y: -.0354433022, z: 0}
@@ -394,10 +497,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: -1.55838156, y: 7.06152678, z: .769999981}
+      position: {x: -2.82838154, y: 6.29152679, z: 0}
       angle: 0
     pointB:
-      position: {x: -1.11649156, y: 7.27496672, z: .769999981}
+      position: {x: -2.38649154, y: 6.50496674, z: 0}
       angle: 0
     normal: {x: -.0299864653, y: .999550283, z: 0}
     direction: {x: -.999550283, y: -.0299864653, z: 0}
@@ -406,10 +509,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: -1.11649156, y: 7.27496672, z: .769999981}
+      position: {x: -2.38649154, y: 6.50496674, z: 0}
       angle: 0
     pointB:
-      position: {x: -.658637166, y: 7.451581, z: .769999981}
+      position: {x: -1.92863715, y: 6.68158102, z: 0}
       angle: 0
     normal: {x: -.0245323051, y: .999699056, z: 0}
     direction: {x: -.999699056, y: -.0245323051, z: 0}
@@ -418,10 +521,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: -.658637166, y: 7.451581, z: .769999981}
+      position: {x: -1.92863715, y: 6.68158102, z: 0}
       angle: 0
     pointB:
-      position: {x: -.187882304, y: 7.59018707, z: .769999981}
+      position: {x: -1.45788229, y: 6.82018709, z: 0}
       angle: 0
     normal: {x: -.0190942716, y: .999817669, z: 0}
     direction: {x: -.999817669, y: -.0190942716, z: 0}
@@ -430,10 +533,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: -.187882304, y: 7.59018707, z: .769999981}
+      position: {x: -1.45788229, y: 6.82018709, z: 0}
       angle: 0
     pointB:
-      position: {x: .292626262, y: 7.68985987, z: .769999981}
+      position: {x: -.977373719, y: 6.91985989, z: 0}
       angle: 0
     normal: {x: -.0136381648, y: .999906957, z: 0}
     direction: {x: -.999906957, y: -.0136381648, z: 0}
@@ -442,10 +545,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: .292626262, y: 7.68985987, z: .769999981}
+      position: {x: -.977373719, y: 6.91985989, z: 0}
       angle: 0
     pointB:
-      position: {x: .7796731, y: 7.74993134, z: .769999981}
+      position: {x: -.490326881, y: 6.97993135, z: 0}
       angle: 0
     normal: {x: -.00818326138, y: .999966502, z: 0}
     direction: {x: -.999966502, y: -.00818326138, z: 0}
@@ -454,10 +557,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: .7796731, y: 7.74993134, z: .769999981}
+      position: {x: -.490326881, y: 6.97993135, z: 0}
       angle: 0
     pointB:
-      position: {x: 1.26999998, y: 7.76999998, z: .769999981}
+      position: {x: -2.84217094e-14, y: 7, z: 0}
       angle: 0
     normal: {x: -.00272763218, y: .999996305, z: 0}
     direction: {x: -.999996305, y: -.00272763218, z: 0}
@@ -466,10 +569,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 1.26999998, y: 7.76999998, z: .769999981}
+      position: {x: -2.84217094e-14, y: 7, z: 0}
       angle: 0
     pointB:
-      position: {x: 1.76032543, y: 7.74993134, z: .769999981}
+      position: {x: .490325421, y: 6.97993135, z: 0}
       angle: 0
     normal: {x: .00272775441, y: .999996305, z: 0}
     direction: {x: -.999996305, y: .00272775441, z: 0}
@@ -478,10 +581,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 1.76032543, y: 7.74993134, z: .769999981}
+      position: {x: .490325421, y: 6.97993135, z: 0}
       angle: 0
     pointB:
-      position: {x: 2.24737215, y: 7.68985987, z: .769999981}
+      position: {x: .977372289, y: 6.91985989, z: 0}
       angle: 0
     normal: {x: .00818326138, y: .999966502, z: 0}
     direction: {x: -.999966502, y: .00818326138, z: 0}
@@ -490,10 +593,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 2.24737215, y: 7.68985987, z: .769999981}
+      position: {x: .977372289, y: 6.91985989, z: 0}
       angle: 0
     pointB:
-      position: {x: 2.72788095, y: 7.59018755, z: .769999981}
+      position: {x: 1.45788097, y: 6.82018757, z: 0}
       angle: 0
     normal: {x: .0136381648, y: .999906957, z: 0}
     direction: {x: -.999906957, y: .0136381648, z: 0}
@@ -502,10 +605,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 2.72788095, y: 7.59018755, z: .769999981}
+      position: {x: 1.45788097, y: 6.82018757, z: 0}
       angle: 0
     pointB:
-      position: {x: 3.19863582, y: 7.451581, z: .769999981}
+      position: {x: 1.92863584, y: 6.68158102, z: 0}
       angle: 0
     normal: {x: .0190942623, y: .999817669, z: 0}
     direction: {x: -.999817669, y: .0190942623, z: 0}
@@ -514,10 +617,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 3.19863582, y: 7.451581, z: .769999981}
+      position: {x: 1.92863584, y: 6.68158102, z: 0}
       angle: 0
     pointB:
-      position: {x: 3.65649009, y: 7.27496719, z: .769999981}
+      position: {x: 2.38649011, y: 6.50496721, z: 0}
       angle: 0
     normal: {x: .0245323051, y: .999699056, z: 0}
     direction: {x: -.999699056, y: .0245323051, z: 0}
@@ -526,10 +629,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 3.65649009, y: 7.27496719, z: .769999981}
+      position: {x: 2.38649011, y: 6.50496721, z: 0}
       angle: 0
     pointB:
-      position: {x: 4.09838009, y: 7.06152773, z: .769999981}
+      position: {x: 2.82838011, y: 6.29152775, z: 0}
       angle: 0
     normal: {x: .0299864821, y: .999550283, z: 0}
     direction: {x: -.999550283, y: .0299864821, z: 0}
@@ -538,10 +641,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 4.09838009, y: 7.06152773, z: .769999981}
+      position: {x: 2.82838011, y: 6.29152775, z: 0}
       angle: 0
     pointB:
-      position: {x: 4.521348, y: 6.81269121, z: .769999981}
+      position: {x: 3.25134826, y: 6.04269123, z: 0}
       angle: 0
     normal: {x: .0354433022, y: .999371707, z: 0}
     direction: {x: -.999371707, y: .0354433022, z: 0}
@@ -550,10 +653,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 4.521348, y: 6.81269121, z: .769999981}
+      position: {x: 3.25134826, y: 6.04269123, z: 0}
       angle: 0
     pointB:
-      position: {x: 4.92256784, y: 6.53012085, z: .769999981}
+      position: {x: 3.65256786, y: 5.76012087, z: 0}
       angle: 0
     normal: {x: .0408970341, y: .999163389, z: 0}
     direction: {x: -.999163389, y: .0408970341, z: 0}
@@ -562,10 +665,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 4.92256784, y: 6.53012085, z: .769999981}
+      position: {x: 3.65256786, y: 5.76012087, z: 0}
       angle: 0
     pointB:
-      position: {x: 1.26999998, y: 1.70749998, z: .769999981}
+      position: {x: 5.46392354e-09, y: .9375, z: 0}
       angle: 0
     normal: {x: .999049544, y: -.0435892232, z: 0}
     direction: {x: .0435892232, y: .999049544, z: 0}
@@ -574,10 +677,10 @@ MonoBehaviour:
     isStart: 0
   - parent: {fileID: 0}
     pointA:
-      position: {x: 1.26999998, y: 1.70749998, z: .769999981}
+      position: {x: 5.46392354e-09, y: .9375, z: 0}
       angle: 0
     pointB:
-      position: {x: -2.38256907, y: 6.53011942, z: .769999981}
+      position: {x: -3.65256906, y: 5.76011944, z: 0}
       angle: 0
     normal: {x: -.999049544, y: -.0435892828, z: 0}
     direction: {x: .0435892828, y: -.999049544, z: 0}
@@ -621,13 +724,13 @@ MonoBehaviour:
     - position: {x: 9.10653941e-10, y: .010416667, z: 0}
       angle: -1.57079637
     - position: {x: 9.10653941e-10, y: .010416667, z: 0}
-      angle: -1.57079637
+      angle: -1.57079625
     - position: {x: -.60876143, y: -.793353438, z: 0}
       angle: .916298032
     - position: {x: -.541891456, y: -.840448499, z: 0}
-      angle: .998110473
+      angle: .998110414
     - position: {x: -.541891456, y: -.840448499, z: 0}
-      angle: .998110473
+      angle: .998110414
     - position: {x: -.471396774, y: -.881921232, z: 0}
       angle: 1.07992256
     - position: {x: -.471396774, y: -.881921232, z: 0}
@@ -644,13 +747,13 @@ MonoBehaviour:
       angle: 1.32535946
     - position: {x: -.242980242, y: -.970031261, z: 0}
       angle: 1.32535946
-    - position: {x: -.162895456, y: -.986643314, z: 0}
+    - position: {x: -.162895471, y: -.986643314, z: 0}
       angle: 1.40717185
-    - position: {x: -.162895456, y: -.986643314, z: 0}
+    - position: {x: -.162895471, y: -.986643314, z: 0}
       angle: 1.40717185
-    - position: {x: -.0817210004, y: -.996655226, z: 0}
+    - position: {x: -.0817209929, y: -.996655226, z: 0}
       angle: 1.48898423
-    - position: {x: -.0817210004, y: -.996655226, z: 0}
+    - position: {x: -.0817209929, y: -.996655226, z: 0}
       angle: 1.48898423
     - position: {x: -8.74227766e-08, y: -1, z: 0}
       angle: 1.57079637
@@ -682,44 +785,12 @@ MonoBehaviour:
       angle: 2.14348245
     - position: {x: .541891515, y: -.840448499, z: 0}
       angle: 2.14348245
-    - position: {x: .60876143, y: -.793353319, z: 0}
+    - position: {x: .60876137, y: -.79335326, z: 0}
       angle: 2.22529483
-    - position: {x: .60876143, y: -.793353319, z: 0}
+    - position: {x: .60876137, y: -.79335326, z: 0}
       angle: 2.22529483
     - position: {x: 0, y: 0, z: 0}
       angle: 0
-    - position: {x: .00810698699, y: -.000287314993, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: .321439445, y: -.94693017, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: .00838450622, y: -.000653704745, z: 0}
-      angle: Infinity
-    - position: {x: .60876143, y: -.793353319, z: 0}
-      angle: Infinity
-    - position: {x: .60876143, y: -.793353319, z: 0}
-      angle: Infinity
-    - position: {x: 0, y: 0, z: 0}
-      angle: Infinity
-    - position: {x: .541891515, y: -.840448499, z: 0}
-      angle: Infinity
-    - position: {x: .00905980729, y: -.00154531084, z: 0}
-      angle: Infinity
-    - position: {x: .00838450622, y: -.000653704745, z: 0}
-      angle: Infinity
-    - position: {x: .00910651684, y: -.00160700164, z: 0}
-      angle: Infinity
-    - position: {x: .00905980729, y: -.00154531084, z: 0}
-      angle: Infinity
     triangles: 220000000100000000000000220000000200000001000000220000000300000002000000220000000400000003000000220000000500000004000000220000000600000005000000220000000700000006000000220000000800000007000000220000000900000008000000220000000a00000009000000220000000b0000000a000000220000000c0000000b000000220000000d0000000c000000220000000e0000000d000000220000000f0000000e00000022000000100000000f000000220000001100000010000000220000001200000011000000220000001300000012000000220000001400000013000000220000001500000014000000220000001600000015000000220000001700000016000000220000001800000017000000220000001900000018000000220000001a00000019000000220000001b0000001a000000220000001c0000001b000000220000001d0000001c000000220000001e0000001d000000220000001f0000001e00000022000000200000001f000000220000002100000020000000220000000000000021000000000000000000000000000000
     normals:
     - {x: 0, y: 0, z: -1}
@@ -771,8 +842,8 @@ MonoBehaviour:
     - {x: .660719633, y: .973465085}
     - {x: .621490061, y: .985015631}
     - {x: .621490061, y: .985015631}
-    - {x: .581447661, y: .993321657}
-    - {x: .581447661, y: .993321657}
+    - {x: .581447721, y: .993321657}
+    - {x: .581447721, y: .993321657}
     - {x: .540860474, y: .998327613}
     - {x: .540860474, y: .998327613}
     - {x: .5, y: 1}
@@ -790,8 +861,8 @@ MonoBehaviour:
     - {x: .264301538, y: .940960586}
     - {x: .229054213, y: .92022419}
     - {x: .229054213, y: .92022419}
-    - {x: .195619255, y: .89667666}
-    - {x: .195619255, y: .89667666}
+    - {x: .195619285, y: .8966766}
+    - {x: .195619285, y: .8966766}
     - {x: .5, y: .5}
     colors:
     - serializedVersion: 2
@@ -882,6 +953,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a05f3bf488f1c4cb5fac4039199d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11471616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d6f68396c3b334e98d04b5cc5dfdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 3
+  ViewRotationStrength: 10
 --- !u!114 &11490696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -894,6 +978,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsStatic: 0
+--- !u!212 &21256014
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156014}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300008, guid: 47447eee0a8a32f4eab3e9cd0488f328, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21290686
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1026,6 +1132,28 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 47447eee0a8a32f4eab3e9cd0488f328, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!212 &21298902
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198902}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300010, guid: 47447eee0a8a32f4eab3e9cd0488f328, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
