@@ -9,7 +9,7 @@ public class CharacterBehaviour : MonoBehaviour {
 	public WayPoint currentWP;
 	public WayPoint destinationWP;
 
-	public float moveSpeed = 30.0f;
+	public float moveSpeed;
 
 	public float wpRadius = 1.8f;
 
@@ -66,7 +66,7 @@ public class CharacterBehaviour : MonoBehaviour {
 		Move (currentMoveVector);
 	}
 
-	Vector3 getMoveTarget(WayPoint destinationWP){
+	protected Vector3 getMoveTarget(WayPoint destinationWP){
 		//Debug.Log ("In GetMoveVector");
 		
 
@@ -77,7 +77,7 @@ public class CharacterBehaviour : MonoBehaviour {
 		return targetPosition;
 	}
 
-	void Move(Vector3 moveTarget){
+	protected void Move(Vector3 moveTarget){
 		//Debug.Log (moveVector);
 		//Debug.Log (transform.position);
 		//Debug.Log (moveTarget);
