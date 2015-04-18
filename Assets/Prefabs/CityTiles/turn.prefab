@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 413256}
   - 212: {fileID: 21213256}
+  - 114: {fileID: 11400000}
+  - 58: {fileID: 5800000}
   m_Layer: 0
   m_Name: turn
   m_TagString: Untagged
@@ -28,6 +30,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5800000
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113256}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1.79999995
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6583bf2e681142a16f394d5b55497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  neighbours: []
 --- !u!212 &21213256
 SpriteRenderer:
   m_ObjectHideFlags: 1

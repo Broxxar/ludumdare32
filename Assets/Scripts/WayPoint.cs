@@ -7,16 +7,16 @@ public class WayPoint : MonoBehaviour {
 	public float radius = 1.0f;
 	public List<WayPoint> neighbours = new List<WayPoint>();
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void OnDrawGizmos () {
 
+		Gizmos.color = Color.cyan;
+
+		foreach (WayPoint wp in neighbours) {
+			if(wp != null)
+			Gizmos.DrawLine(transform.position, wp.transform.position);
+		}
+
+	}
 
 	public LinkedList<WayPoint> findPathAStar (WayPoint target, Stack<WayPoint> pathSoFar, LinkedList<WayPoint> visited){
 		return null;

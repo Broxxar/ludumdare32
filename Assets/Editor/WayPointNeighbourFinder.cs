@@ -10,30 +10,39 @@ public class MenuItems
 	{
 		WayPoint[] allWayPoints = GameObject.FindObjectsOfType<WayPoint> ();
 
-
+		Debug.Log ("entered function");
 
 		foreach (WayPoint wp in allWayPoints) {
 
 			wp.neighbours.Clear();
 
-			Collider2D candidate = Physics2D.OverlapPoint((Vector2)wp.transform.position + Vector2.up*2);
-			if (candidate != null){
-				wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+			Collider2D[] candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position + Vector2.up*4);
+
+			foreach (Collider2D candidate in candidates){
+				if (candidate.GetComponent<WayPoint>() != null){
+					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+				}
 			}
 
-			candidate = Physics2D.OverlapPoint((Vector2)wp.transform.position + Vector2.right*2);
-			if (candidate != null){
-				wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position + Vector2.right*4);
+			foreach (Collider2D candidate in candidates){
+				if (candidate.GetComponent<WayPoint>() != null){
+					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+				}
 			}
 
-			candidate = Physics2D.OverlapPoint((Vector2)wp.transform.position - Vector2.up*2);
-			if (candidate != null){
-				wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position - Vector2.up*4);
+			foreach (Collider2D candidate in candidates){
+				if (candidate.GetComponent<WayPoint>() != null){
+					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+				}
 			}
-			
-			candidate = Physics2D.OverlapPoint((Vector2)wp.transform.position - Vector2.right*2);
-			if (candidate != null){
-				wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+
+			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position - Vector2.right*4);
+			foreach (Collider2D candidate in candidates){
+				if (candidate.GetComponent<WayPoint>() != null){
+					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+				}
 			}
 
 			EditorUtility.SetDirty(wp);
