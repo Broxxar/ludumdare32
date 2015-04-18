@@ -12,8 +12,8 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
+  User Layer 8: FoV
+  User Layer 9: HideFromPhoto
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
@@ -40,6 +40,10 @@ TagManager:
   - name: Ground
     userID: 1
     uniqueID: 2624610489
+    locked: 0
+  - name: FoV
+    userID: 3
+    uniqueID: 1757558699
     locked: 0
   - name: Default
     userID: 0
