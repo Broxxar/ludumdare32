@@ -649,7 +649,7 @@ public class SortingView : EditorWindow
     /// </summary>
     void ClickProcess()
     {
-        if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
+		if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
         {
             DragAndDrop.PrepareStartDrag();
             _editSelectRenderer = null;
@@ -861,7 +861,7 @@ public class SortingView : EditorWindow
             }
 
         }
-        else if (Event.current.type == EventType.MouseUp)
+		else if (Event.current.type == EventType.MouseUp)
         {
             _isDragRight = false;
             _isDragLeft = false;
@@ -908,7 +908,7 @@ public class SortingView : EditorWindow
                 Event.current.Use();
             }
         }
-        else if (Event.current.rawType == EventType.MouseUp)
+		else if (Event.current.rawType == EventType.MouseUp)
         {
             _isDragRight = false;
             _isDragLeft = false;
@@ -924,7 +924,7 @@ public class SortingView : EditorWindow
     /// </summary>
     void DragProcess()
     {
-        if (_isDragLeft && Event.current.type == EventType.Repaint)
+		if (_isDragLeft && Event.current.type == EventType.Repaint)
         {
             float dstY = GetRendererInfo(_focusSelectRenderer).leftEventRect.y - _originShiftPos;
             if (dstY != _scrollPosition.y)
@@ -936,7 +936,7 @@ public class SortingView : EditorWindow
             }
         }
 
-        if (Event.current.type == EventType.MouseDrag)
+		if (Event.current.type == EventType.MouseDrag)
         {
             if (Event.current.button == 0 && _focusSelectRenderer != null)
             {
@@ -970,7 +970,7 @@ public class SortingView : EditorWindow
             }
             Event.current.Use();
         }
-        else if (Event.current.type == EventType.DragUpdated && _isDragRight)
+		else if (Event.current.type == EventType.DragUpdated && _isDragRight)
         {
             SortingLayerInfo dropLayer = GetDropLayer(Event.current.mousePosition + _scrollPosition + new Vector2(0, -24f));
             if (dropLayer == null)
@@ -980,7 +980,7 @@ public class SortingView : EditorWindow
 
             Event.current.Use();
         }
-        else if (Event.current.type == EventType.DragPerform && _isDragRight)
+		else if (Event.current.type == EventType.DragPerform && _isDragRight)
         {
             DragAndDrop.AcceptDrag();
 
@@ -1005,7 +1005,7 @@ public class SortingView : EditorWindow
 
             Event.current.Use();
         }
-        else if (Event.current.rawType == EventType.DragPerform && _isDragLeft)
+		else if (Event.current.rawType == EventType.DragPerform && _isDragLeft)
         {
             _isDragRight = false;
             _isDragLeft = false;
@@ -1023,7 +1023,7 @@ public class SortingView : EditorWindow
         if (_focusSelectRenderer == null)
             return;
 
-        if (Event.current.type == EventType.KeyDown)
+		if (Event.current.type == EventType.KeyDown)
         {
             if (Event.current.keyCode == KeyCode.UpArrow)
             {
@@ -1164,7 +1164,7 @@ public class SortingView : EditorWindow
                 Event.current.Use();
             }
         }
-        else if (Event.current.type == EventType.KeyUp)
+		else if (Event.current.type == EventType.KeyUp)
         {
             _guiTime = 0;
             _keyDampState = KeyBoardDamp.None;

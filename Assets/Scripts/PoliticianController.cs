@@ -8,11 +8,13 @@ public class PoliticianController : MonoBehaviour {
 	int routeIndex=0;
 	bool performedEvent = false;
 
+
+
 	// Use this for initialization
 	void Start () {
 
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
-		EventManager.Instance.SetEventState (Events.movingBetween);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
 
 	}
 
@@ -21,34 +23,38 @@ public class PoliticianController : MonoBehaviour {
 
 			transform.position = Vector3.MoveTowards (transform.position, Route[routeIndex].transform.position, Time.deltaTime * moveSpeed);
 		}else{
-			Events currentEvent = EventManager.Instance.currentEvent;
-			if(currentEvent == Events.RibbonCutting){
+			StoryEvents currentEvent = EventManager.Instance.currentEvent;
+			if(currentEvent == StoryEvents.RibbonCutting){
 				if(!performedEvent){
 					performedEvent = true;
+					Debug.Log ("Ribbon Cutting going down");
 					StartCoroutine(RunRibbonEvent());
-
 				}
-			}else if(currentEvent == Events.HotDog){
+			}else if(currentEvent == StoryEvents.HotDog){
 				if(!performedEvent){
 					performedEvent = true;
+					Debug.Log ("HOTDOG!");
 					StartCoroutine(RunHotDogEvent());
 				}
-			}else if(currentEvent == Events.StealCandy){
+			}else if(currentEvent == StoryEvents.StealCandy){
 				if(!performedEvent){
 					performedEvent = true;
+					Debug.Log ("That bitch stole some candy");
 					StartCoroutine(RunStealCandyEvent());
 				}
-			}else if(currentEvent == Events.LudeActs){
+			}else if(currentEvent == StoryEvents.LudeActs){
 				if(!performedEvent){
 					performedEvent = true;
+					Debug.Log ("OH MY!");
 					StartCoroutine(RunLudeActsEvent());
 				}
 			}
+
 		}
 	}
 
 	public void IncrementRouteIndex(){
-		if(routeIndex < Route.Length)
+		if(routeIndex < Route.Length-1)
 			routeIndex++;
 	}
 
@@ -62,11 +68,12 @@ public class PoliticianController : MonoBehaviour {
 
 		//Run animation
 		//wait for it to end
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (5.0f);
 
 		//after event ends send him on his way
 		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (Events.movingBetween);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		Debug.Log ("event Over");
 
 	}
 
@@ -74,31 +81,34 @@ public class PoliticianController : MonoBehaviour {
 
 		//Run animation
 			//wait for it to end
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (5.0f);
 		
 		//after event ends send him on his way
 		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (Events.movingBetween);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		Debug.Log ("event Over");
 	}
 
 	IEnumerator RunStealCandyEvent(){
 		//Run animation
 			//wait for it to end
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (5.0f);
 		
 		//after event ends send him on his way
 		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (Events.movingBetween);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		Debug.Log ("event Over");
 	}
 	IEnumerator RunLudeActsEvent(){
 
 		//Run animation
 		//wait for it to end
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (5.0f);
 		
 		//after event ends send him on his way
 		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (Events.movingBetween);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		Debug.Log ("event Over");
 
 
 	}

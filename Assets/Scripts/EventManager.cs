@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public enum Events{Start, RibbonCutting, HotDog, StealCandy, LudeActs, movingBetween}
+
+public enum StoryEvents{RibbonCutting, HotDog, StealCandy, LudeActs, movingBetween}
 public delegate void OnEventChangeHandler();
 
-public class EventManager {
+public class EventManager : MonoBehaviour{
 
 	private static EventManager _instance = null;    
 	public event OnEventChangeHandler OnEventChange;
-	public Events currentEvent { get; private set; }
+	public StoryEvents currentEvent { get; private set; }
+	public List<EventWayPoint> eventWPs;
+	 
 	protected EventManager() {}
 
 	public static EventManager Instance { 
 		get {
-			if (_instance == null) {
-				_instance = new EventManager(); 
-			}  
-			return _instance;
+			return _instance ?? GameObject.FindObjectOfType<EventManager>();
 		} 
 	}
 
-	public void SetEventState(Events newEvent) {
+	public void SetEventState(StoryEvents newEvent) {
 		this.currentEvent = newEvent;
 		if(OnEventChange!=null) {
 			OnEventChange();

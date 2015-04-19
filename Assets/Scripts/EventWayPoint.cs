@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EventWayPoint : MonoBehaviour {
+public class EventWayPoint : WayPoint{
 
-	public Events ThisEvent;
+	public StoryEvents ThisEvent;
+	public Collider2D[] EventRequiredItems;
+	public CircleCollider2D[] EventRestrictedItems;
 
-	void OnTriggerEvent2D(Collider2D other){
+
+	void OnTriggerEnter2D(Collider2D other){
 		if(other.GetComponent<PoliticianController>()){
 			EventManager.Instance.SetEventState(ThisEvent);
 		}
-		
 	}
+
+
+
+
+
+
 }

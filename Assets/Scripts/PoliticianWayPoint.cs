@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PoliticianWayPoint : MonoBehaviour {
+public class PoliticianWayPoint : WayPoint {
 
 
 

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	Animator _anim;
 	Transform _view;
 	PlayerVirtualCamera _playerCam;
+	BoxCollider2D _photoCollider;
 
 	int _cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
 		_anim = GetComponent<Animator>();
 		_view = transform.FindChild("view");
 		_playerCam = _view.GetComponentInChildren<PlayerVirtualCamera>();
+		_photoCollider = _view.GetComponentInChildren<BoxCollider2D>();
+
 	}
 	
 	void Update ()
@@ -52,7 +55,17 @@ public class PlayerController : MonoBehaviour
 		_playerCam.Capture();
 		yield return new WaitForEndOfFrame();
 		GUIController.Instance.SpawnPolaroid(_playerCam.RecentPhoto);
-		
+
+		//Evaluate Photo
+		bool isPhotoGood = false;
+		StoryEvents currentEvent = EventManager.Instance.currentEvent;
+		foreach(EventWayPoint wp in EventManager.Instance.eventWPs){
+
+			if(wp.ThisEvent == currentEvent){
+				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp);
+			}
+		}
+		Debug.Log (isPhotoGood);
 		
 		yield return new WaitForSeconds(0.45f);
 		// Post Photo
