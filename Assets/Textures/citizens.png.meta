@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 2e8a0e7716852634691f6ff563fccd48
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: citizen_body_1
+    21300002: citizen_body_7
+    21300004: citizen_body_3
+    21300006: citizen_body_9
+    21300008: citizen_body_5
+    21300010: citizen_body_11
+    21300012: citizen_head_0
+    21300014: citizen_body_0
+    21300016: citizen_body_6
+    21300018: citizen_body_2
+    21300020: citizen_body_8
+    21300022: citizen_body_4
+    21300024: citizen_body_10
+    21300026: citizen_head_4
+    21300028: citizen_arm_6
+    21300030: citizen_arm_0
+    21300032: citizen_arm_7
+    21300034: citizen_arm_1
+    21300036: citizen_arm_8
+    21300038: citizen_arm_2
+    21300040: citizen_arm_9
+    21300042: citizen_arm_3
+    21300044: citizen_arm_10
+    21300046: citizen_arm_4
+    21300048: citizen_arm_11
+    21300050: citizen_arm_5
+    21300052: citizen_head_9
+    21300054: citizen_head_7
+    21300056: citizen_head_11
+    21300058: citizen_leg_0
+    21300060: citizen_leg_3
+    21300062: citizen_leg_1
+    21300064: citizen_head_2
+    21300066: citizen_head_6
+    21300068: citizen_head_10
+    21300070: citizen_head_8
+    21300072: citizen_leg_2
+    21300074: citizen_leg_5
+    21300076: citizen_leg_11
+    21300078: citizen_head_3
+    21300080: citizen_head_1
+    21300082: citizen_head_5
+    21300084: citizen_leg_white
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: citizen_body_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 443
+        width: 62
+        height: 63
+      alignment: 9
+      pivot: {x: .497188509, y: .0573081374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_7
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 443
+        width: 63
+        height: 66
+      alignment: 9
+      pivot: {x: .494466156, y: .064225167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 443
+        width: 61
+        height: 63
+      alignment: 9
+      pivot: {x: .505714774, y: .0600750633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 443
+        width: 63
+        height: 66
+      alignment: 9
+      pivot: {x: .502766669, y: .0589433163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 443
+        width: 61
+        height: 63
+      alignment: 9
+      pivot: {x: .494284719, y: .0600750633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 443
+        width: 63
+        height: 66
+      alignment: 9
+      pivot: {x: .505533397, y: .064225167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_0
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 402
+        width: 90
+        height: 104
+      alignment: 9
+      pivot: {x: .548419178, y: .042436745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 362
+        width: 56
+        height: 71
+      alignment: 9
+      pivot: {x: .481323779, y: .205391899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 371
+        width: 60
+        height: 63
+      alignment: 9
+      pivot: {x: .499999881, y: .0766761452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 362
+        width: 57
+        height: 71
+      alignment: 9
+      pivot: {x: .490825713, y: .210301787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_8
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 362
+        width: 60
+        height: 72
+      alignment: 9
+      pivot: {x: .488379151, y: .214325368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 362
+        width: 57
+        height: 71
+      alignment: 9
+      pivot: {x: .49388364, y: .220121995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_body_10
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 362
+        width: 60
+        height: 72
+      alignment: 9
+      pivot: {x: .497094214, y: .224009618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_4
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 293
+        width: 90
+        height: 103
+      alignment: 9
+      pivot: {x: .548419178, y: .0413788743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 299
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .499999553, y: .90978092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 299
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .482568741, y: .918954968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 299
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .488379151, y: .915896773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .499999732, y: .925071299}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_8
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .49398908, y: .918954968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .48797819, y: .918954968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .49398908, y: .918954968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 299
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .499999493, y: .912839115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_10
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .506009877, y: .922013104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 299
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .505809546, y: .918954968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .49398908, y: .915896773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_arm_5
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 299
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .49398908, y: .925071299}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 201
+        width: 81
+        height: 92
+      alignment: 9
+      pivot: {x: .495695978, y: .0471733771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_7
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 201
+        width: 81
+        height: 92
+      alignment: 9
+      pivot: {x: .491391957, y: .0490681194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 201
+        width: 81
+        height: 92
+      alignment: 9
+      pivot: {x: .489239931, y: .05285744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_0
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 223
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .493543833, y: .942478597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 223
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .499998868, y: .942478597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_1
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 223
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .506455004, y: .934433699}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 183
+        width: 90
+        height: 103
+      alignment: 9
+      pivot: {x: .554229379, y: .0430712663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 107
+        width: 91
+        height: 88
+      alignment: 9
+      pivot: {x: .477014065, y: .119687684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_10
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 107
+        width: 92
+        height: 88
+      alignment: 9
+      pivot: {x: .484842539, y: .119687684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 107
+        width: 91
+        height: 88
+      alignment: 9
+      pivot: {x: .477013886, y: .119687684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 153
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .493543833, y: .929070354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 153
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .493542701, y: .931751907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_11
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 153
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .512911201, y: .93711549}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 89
+        height: 81
+      alignment: 9
+      pivot: {x: .496082872, y: .0566935353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 20
+        width: 89
+        height: 81
+      alignment: 9
+      pivot: {x: .496082783, y: .0566935353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_head_5
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 20
+        width: 89
+        height: 81
+      alignment: 9
+      pivot: {x: .494124323, y: .05884552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_leg_white
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 82
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .499998868, y: .93443346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
