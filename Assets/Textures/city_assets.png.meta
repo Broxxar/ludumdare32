@@ -12,6 +12,10 @@ TextureImporter:
     21300014: sky_scraper
     21300016: brick_building
     21300018: city_limit
+    21300020: grass_corner
+    21300022: grass_edge
+    21300024: grass_inner
+    21300026: hospital
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -150,6 +154,46 @@ TextureImporter:
         y: 1929
         width: 50
         height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grass_corner
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 782
+        width: 404
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grass_edge
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 782
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grass_inner
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 10
+        width: 405
+        height: 404
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hospital
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 6
+        width: 755
+        height: 767
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

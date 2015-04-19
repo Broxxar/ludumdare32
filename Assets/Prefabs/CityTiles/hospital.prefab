@@ -1,0 +1,518 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &155772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 455772}
+  - 212: {fileID: 21255772}
+  m_Layer: 0
+  m_Name: shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &155774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 455774}
+  - 212: {fileID: 21255774}
+  - 60: {fileID: 6047664}
+  - 114: {fileID: 11447664}
+  m_Layer: 0
+  m_Name: sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &155776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 455776}
+  - 114: {fileID: 11411078}
+  m_Layer: 0
+  m_Name: hospital
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &455772
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.96000004, z: .100000001}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455776}
+  m_RootOrder: 1
+--- !u!4 &455774
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455776}
+  m_RootOrder: 0
+--- !u!4 &455776
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30, y: 14, z: 14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 455774}
+  - {fileID: 455772}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!60 &6047664
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155774}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 3.66499996, y: -.894999981}
+      - {x: 3.68499994, y: -.425000012}
+      - {x: 3.70499992, y: .0549999997}
+      - {x: 3.7650001, y: 1.47500002}
+      - {x: 3.7750001, y: 1.73500001}
+      - {x: 3.7750001, y: 2.39499998}
+      - {x: 3.7650001, y: 2.44499993}
+      - {x: 3.64499998, y: 3.08500004}
+      - {x: 3.50500011, y: 3.80500007}
+      - {x: 3.4849999, y: 3.83500004}
+      - {x: -3.50500011, y: 3.83500004}
+      - {x: -3.53500009, y: 3.75500011}
+      - {x: -3.57500005, y: 3.4849999}
+      - {x: -3.71499991, y: 2.7249999}
+      - {x: -3.7750001, y: 2.39499998}
+      - {x: -3.7750001, y: 1.70500004}
+      - {x: -3.7650001, y: 1.42499995}
+      - {x: -3.57500005, y: -3.70499992}
+      - {x: -3.56500006, y: -3.81500006}
+      - {x: -3.54500008, y: -3.83500004}
+      - {x: 3.5150001, y: -3.83500004}
+      - {x: 3.53500009, y: -3.81500006}
+      - {x: 3.54500008, y: -3.7750001}
+--- !u!114 &11411078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155776}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09ee8d98d27d8648bf1e5e36dd241a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsStatic: 1
+--- !u!114 &11447664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530167df34286b34497636fcac985fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    serializedVersion: 2
+    x: 26.2249985
+    y: 10.1650009
+    width: 7.55000114
+    height: 7.66999912
+  edges:
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.6650009, y: 13.1049995, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.6850014, y: 13.5749998, z: 14}
+      angle: 0
+    normal: {x: .999095857, y: -.0425146781, z: 0}
+    direction: {x: .0425146781, y: .999095857, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.6850014, y: 13.5749998, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.7050018, y: 14.0550003, z: 14}
+      angle: 0
+    normal: {x: .99913305, y: -.0416305028, z: 0}
+    direction: {x: .0416305028, y: .99913305, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.7050018, y: 14.0550003, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.7649994, y: 15.4750004, z: 14}
+      angle: 0
+    normal: {x: .999108493, y: -.0422159769, z: 0}
+    direction: {x: .0422159769, y: .999108493, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.7649994, y: 15.4750004, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.7750015, y: 15.7349997, z: 14}
+      angle: 0
+    normal: {x: .9992612, y: -.0384330899, z: 0}
+    direction: {x: .0384330899, y: .9992612, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.7750015, y: 15.7349997, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.7750015, y: 16.3950005, z: 14}
+      angle: 0
+    normal: {x: 1, y: -0, z: 0}
+    direction: {x: 0, y: 1, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.7750015, y: 16.3950005, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.7649994, y: 16.4449997, z: 14}
+      angle: 0
+    normal: {x: .980580688, y: .196116135, z: 0}
+    direction: {x: -.196116135, y: .980580688, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.7649994, y: 16.4449997, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.6450005, y: 17.0849991, z: 14}
+      angle: 0
+    normal: {x: .982872128, y: .184288681, z: 0}
+    direction: {x: -.184288681, y: .982872128, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.6450005, y: 17.0849991, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.5050011, y: 17.8050003, z: 14}
+      angle: 0
+    normal: {x: .981615484, y: .19086948, z: 0}
+    direction: {x: -.19086948, y: .981615484, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.5050011, y: 17.8050003, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.4850006, y: 17.8349991, z: 14}
+      angle: 0
+    normal: {x: .832047284, y: .554704785, z: 0}
+    direction: {x: -.554704785, y: .832047284, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.4850006, y: 17.8349991, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4949989, y: 17.8349991, z: 14}
+      angle: 0
+    normal: {x: 0, y: 1, z: 0}
+    direction: {x: -1, y: 0, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4949989, y: 17.8349991, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4650002, y: 17.7550011, z: 14}
+      angle: 0
+    normal: {x: -.936329186, y: .351123422, z: 0}
+    direction: {x: -.351123422, y: -.936329186, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4650002, y: 17.7550011, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4249992, y: 17.4850006, z: 14}
+      angle: 0
+    normal: {x: -.989203453, y: .146548405, z: 0}
+    direction: {x: -.146548405, y: -.989203453, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4249992, y: 17.4850006, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.2849998, y: 16.7250004, z: 14}
+      angle: 0
+    normal: {x: -.983453214, y: .181162253, z: 0}
+    direction: {x: -.181162253, y: -.983453214, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.2849998, y: 16.7250004, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.2250004, y: 16.3950005, z: 14}
+      angle: 0
+    normal: {x: -.983869851, y: .178886011, z: 0}
+    direction: {x: -.178886011, y: -.983869851, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.2250004, y: 16.3950005, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.2250004, y: 15.7049999, z: 14}
+      angle: 0
+    normal: {x: -1, y: -0, z: 0}
+    direction: {x: 0, y: -1, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.2250004, y: 15.7049999, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.2350006, y: 15.4250002, z: 14}
+      angle: 0
+    normal: {x: -.999362826, y: -.0356914848, z: 0}
+    direction: {x: .0356914848, y: -.999362826, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.2350006, y: 15.4250002, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4249992, y: 10.2950001, z: 14}
+      angle: 0
+    normal: {x: -.999314845, y: -.0370116718, z: 0}
+    direction: {x: .0370116718, y: -.999314845, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4249992, y: 10.2950001, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4349995, y: 10.1849995, z: 14}
+      angle: 0
+    normal: {x: -.99589318, y: -.0905355439, z: 0}
+    direction: {x: .0905355439, y: -.99589318, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4349995, y: 10.1849995, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 26.4549999, y: 10.165, z: 14}
+      angle: 0
+    normal: {x: -.707106769, y: -.707106769, z: 0}
+    direction: {x: .707106769, y: -.707106769, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 26.4549999, y: 10.165, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.5149994, y: 10.165, z: 14}
+      angle: 0
+    normal: {x: 0, y: -1, z: 0}
+    direction: {x: 1, y: 0, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.5149994, y: 10.165, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.5349998, y: 10.1849995, z: 14}
+      angle: 0
+    normal: {x: .707106769, y: -.707106769, z: 0}
+    direction: {x: .707106769, y: .707106769, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.5349998, y: 10.1849995, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.5449982, y: 10.2250004, z: 14}
+      angle: 0
+    normal: {x: .970142484, y: -.242535621, z: 0}
+    direction: {x: .242535621, y: .970142484, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 0
+    isStart: 0
+  - parent: {fileID: 0}
+    pointA:
+      position: {x: 33.5449982, y: 10.2250004, z: 14}
+      angle: 0
+    pointB:
+      position: {x: 33.6650009, y: 13.1049995, z: 14}
+      angle: 0
+    normal: {x: .99913311, y: -.0416305028, z: 0}
+    direction: {x: .0416305028, y: .99913311, z: 0}
+    flagNormalUpdate: 1
+    isEnd: 1
+    isStart: 0
+  isActive: 1
+  localVertices:
+  - {x: 3.66499996, y: -.894999981, z: 0}
+  - {x: 3.68499994, y: -.425000012, z: 0}
+  - {x: 3.70499992, y: .0549999997, z: 0}
+  - {x: 3.7650001, y: 1.47500002, z: 0}
+  - {x: 3.7750001, y: 1.73500001, z: 0}
+  - {x: 3.7750001, y: 2.39499998, z: 0}
+  - {x: 3.7650001, y: 2.44499993, z: 0}
+  - {x: 3.64499998, y: 3.08500004, z: 0}
+  - {x: 3.50500011, y: 3.80500007, z: 0}
+  - {x: 3.4849999, y: 3.83500004, z: 0}
+  - {x: -3.50500011, y: 3.83500004, z: 0}
+  - {x: -3.53500009, y: 3.75500011, z: 0}
+  - {x: -3.57500005, y: 3.4849999, z: 0}
+  - {x: -3.71499991, y: 2.7249999, z: 0}
+  - {x: -3.7750001, y: 2.39499998, z: 0}
+  - {x: -3.7750001, y: 1.70500004, z: 0}
+  - {x: -3.7650001, y: 1.42499995, z: 0}
+  - {x: -3.57500005, y: -3.70499992, z: 0}
+  - {x: -3.56500006, y: -3.81500006, z: 0}
+  - {x: -3.54500008, y: -3.83500004, z: 0}
+  - {x: 3.5150001, y: -3.83500004, z: 0}
+  - {x: 3.53500009, y: -3.81500006, z: 0}
+  - {x: 3.54500008, y: -3.7750001, z: 0}
+  isDirty: 0
+  verticesDirty: 0
+  colliderReferenceType: 2
+  collider2DReference: {fileID: 6047664}
+  collider3DReference: {fileID: 0}
+  circleResolution: 8
+  polyColliderPathIndex: 0
+--- !u!212 &21255772
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155772}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300026, guid: 56391687f5edf0842887dc9e9973c401, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: .196078435}
+--- !u!212 &21255774
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155774}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300026, guid: 56391687f5edf0842887dc9e9973c401, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 155776}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

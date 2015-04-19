@@ -2872,7 +2872,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .5
+  m_Radius: 1.79999995
   m_Center: {x: 0, y: 0}
 --- !u!114 &1263317223
 MonoBehaviour:
@@ -2887,7 +2887,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
-  neighbours: []
+  neighbours:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1328445870
 GameObject:
   m_ObjectHideFlags: 0
