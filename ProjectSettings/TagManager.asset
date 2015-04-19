@@ -53,3 +53,7 @@ TagManager:
     userID: 2
     uniqueID: 1624198905
     locked: 0
+  - name: Polaroids
+    userID: 4
+    uniqueID: 1478458629
+    locked: 0
