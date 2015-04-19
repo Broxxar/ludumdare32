@@ -1,103 +1,79 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
-public class CharacterBehaviour : MonoBehaviour {
+public class CharacterBehaviour : MonoBehaviour
+{
+	public WayPoint CurrentWP;
+	public WayPoint DestinationWP;
+	public float MoveSpeed;
+	[Range (0, 1)]
+	public float ChanceToIdle;
+	public float MinIdleTime;
+	public float MaxIdleTime;
 
-	private WayPoint previousWP;
-	public WayPoint currentWP;
-	public WayPoint destinationWP;
-
-	public float moveSpeed;
-
-	public float wpRadius = 1.8f;
-
-	private Vector3 targetPosition;
-
-	//move vector for current move
-	private Vector3 currentMoveTarget;
-
-	// Use this for initialization
-	void Start () {
-
-
-		if (currentWP == null) {
-
-			//assign current waypoint by closest one on map
-			WayPoint[] allWayPoints = GameObject.FindObjectsOfType<WayPoint> ();
-
-			float minDistance = 10000.0f; 
-			float distance;
-
-			for (int i = 0; i < allWayPoints.Length; i ++){
-
-				distance = Vector3.Distance(this.transform.position, allWayPoints[i].transform.position);
-
-				if (distance < minDistance){
-					minDistance = distance;
-					currentWP = allWayPoints[i];
-				}
-			}
-		}
-
-
-/*
-		if (destinationWP == null) {
-			//assign destination waypoint randomly from current neighbours
-			if (currentWP != null){
-				destinationWP = currentWP.neighbours[Random.Range (0, currentWP.neighbours.Count)];
-			}
-		}
-*/
-		previousWP = currentWP;
-		//should call getMoveVector first
-		targetPosition = transform.position;
-	}
+	Animator _anim;
+	int _isWalkingHash = Animator.StringToHash("IsWalking");
 	
-	// Update is called once per frame
-	void Update () {
+	WayPoint _previousWP;
+	bool _idling;
+	Vector3 _currentMoveTarget;
 
-		//if arrived at target location, find a random neighbour and move there
-		if (transform.position.Equals(targetPosition)) {
+	void Awake ()
+	{
+		_anim = GetComponent<Animator>();
+	}
 
-			WayPoint newDestinationWP;
+	void Start () 
+	{
+		CurrentWP = CurrentWP ?? GameObject.FindObjectsOfType<WayPoint>()
+			.OrderBy(wp => Vector3.Distance((Vector2)wp.transform.position, (Vector2)transform.position))
+			.First().GetComponent<WayPoint>();
 
-			do {		
-				newDestinationWP = currentWP.neighbours[Random.Range (0, currentWP.neighbours.Count)];
-			} while (newDestinationWP == previousWP);
+		GetNewMoveTarget(CurrentWP);
+	}
 
-			Debug.Log (newDestinationWP.transform.position);
-
-			previousWP = currentWP;
+	void Update ()
+	{
+		// If arrived at target location, find a random neighbour and set it as the new Move Target
+		if ((Vector2)transform.position == (Vector2)_currentMoveTarget) {	
+			_previousWP = CurrentWP;
+			CurrentWP = CurrentWP.neighbours
+				.Where(wp => wp != _previousWP || CurrentWP.neighbours.Count == 1)
+				.OrderBy(wp => Random.Range(0f, 1f))
+				.First();
+			GetNewMoveTarget(CurrentWP);
 			
-			currentMoveTarget = getMoveTarget(newDestinationWP);
-	
-			currentWP = newDestinationWP;
-
-			Debug.Log (previousWP.transform.position);
-			Debug.Log (newDestinationWP.transform.position);
-			Debug.Log ("------------------------");
+			if (Random.Range(0f, 1f) < ChanceToIdle)
+				Idle ();
 		}
-
-		//everyframe move towards target position
-		Move (currentMoveTarget);
-	}
-
-	protected Vector3 getMoveTarget(WayPoint destinationWP){
-		//Debug.Log ("In GetMoveTarget");
 		
-
-		Vector3 currentPosition = this.transform.position;
-		targetPosition = destinationWP.transform.position + new Vector3(Random.Range(-wpRadius, wpRadius), Random.Range(-wpRadius, wpRadius), 0);
-
-		//Debug.Log ("In GetMoveVector end");
-		return targetPosition;
+		if (!_idling)
+			Move (_currentMoveTarget);
+			
+		_anim.SetBool(_isWalkingHash, !_idling);
+	}
+	
+	void Idle ()
+	{
+		StartCoroutine(IdleAsync(Random.Range(MinIdleTime, MaxIdleTime)));
+	}
+	
+	IEnumerator IdleAsync (float idleDuration)
+	{
+		_idling = true;
+		yield return new WaitForSeconds(idleDuration);
+		_idling = false;
 	}
 
-	protected void Move(Vector3 moveTarget){
-
-		//Debug.Log ("In move");
-		transform.position = Vector3.MoveTowards (transform.position, moveTarget, Time.deltaTime * moveSpeed);
+	protected void GetNewMoveTarget(WayPoint destinationWP)
+	{
+		float radius = destinationWP.GetComponent<CircleCollider2D>().radius;
+		_currentMoveTarget = destinationWP.transform.position + (Vector3)Random.insideUnitCircle * radius;
 	}
 
-
+	protected void Move(Vector3 moveTarget)
+	{
+		transform.position = Vector2.MoveTowards (transform.position, moveTarget, Time.deltaTime * MoveSpeed);
+	}
 }

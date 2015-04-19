@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.01000023, y: -2.08999991, z: -2.08999991}
+  m_LocalPosition: {x: 5.31099987, y: -1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 413758}
@@ -270,10 +270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49bd0042a6c77f44a5ce286d78a3e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWP: {fileID: 0}
-  destinationWP: {fileID: 0}
-  moveSpeed: 0
-  wpRadius: 1.79999995
+  CurrentWP: {fileID: 0}
+  DestinationWP: {fileID: 0}
+  MoveSpeed: 1
+  ChanceToIdle: .349999994
+  MinIdleTime: 2
+  MaxIdleTime: 6
 --- !u!212 &21213754
 SpriteRenderer:
   m_ObjectHideFlags: 1

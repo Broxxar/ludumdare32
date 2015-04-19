@@ -258,10 +258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49bd0042a6c77f44a5ce286d78a3e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWP: {fileID: 0}
-  destinationWP: {fileID: 0}
-  moveSpeed: 0
-  wpRadius: 1.79999995
+  CurrentWP: {fileID: 0}
+  DestinationWP: {fileID: 0}
+  MoveSpeed: 1
+  ChanceToIdle: .349999994
+  MinIdleTime: 2
+  MaxIdleTime: 6
 --- !u!114 &11418742
 MonoBehaviour:
   m_ObjectHideFlags: 1
