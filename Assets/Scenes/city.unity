@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1001 &3316868
 Prefab:
@@ -1910,7 +1909,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 292341428}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!1 &296199690
@@ -9057,8 +9056,8 @@ MonoBehaviour:
   - {x: -.541891456, y: -.840448439, z: 0}
   - {x: -.60876137, y: -.793353379, z: 0}
   - {x: 0, y: .010416667, z: 0}
-  isDirty: 1
-  verticesDirty: 1
+  isDirty: 0
+  verticesDirty: 0
   isStatic: 0
   color: {r: .0442906544, g: .0961918458, b: .117647059, a: 1}
   material: {fileID: 2100000, guid: 236b39e1f23bbbb4999e9e6e7550b62d, type: 2}
@@ -9315,7 +9314,7 @@ Renderer:
   m_SortingOrder: -1
 --- !u!33 &784098340
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 3331578, guid: 458b574a179421e4b853b7c6f9c825ba,
     type: 2}
   m_PrefabInternal: {fileID: 1501937588}
@@ -13482,7 +13481,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -15159,6 +15158,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11431576, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
       propertyPath: verticesDirty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087662, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
+      propertyPath: m_FixedAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087662, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135356, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19257,8 +19268,9 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_Priority: 3
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
