@@ -9,13 +9,14 @@ public class PoliticianController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Debug.Log ("start");
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
 		EventManager.Instance.SetEventState (Events.movingBetween);
+		Debug.Log ("End Start");
 	}
 
 	void Update(){
-		while(EventManager.Instance.currentEvent == Events.movingBetween){
+		while(EventManager.Instance.currentEvent == Events.movingBetween && transform.position != Route[routeIndex].transform.position){
 			transform.position = Vector3.MoveTowards (transform.position, Route[routeIndex].transform.position, Time.deltaTime * moveSpeed);
 		}
 	}
