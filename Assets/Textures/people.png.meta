@@ -8,6 +8,10 @@ TextureImporter:
     21300006: press_0_leg
     21300008: camera
     21300010: camera_flash
+    21300012: security_detail_head
+    21300014: security_detail_body
+    21300016: security_detail_arm
+    21300018: security_detail_leg
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -108,6 +112,46 @@ TextureImporter:
         height: 35
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: security_detail_head
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 425
+        width: 76
+        height: 85
+      alignment: 9
+      pivot: {x: .5, y: .0500000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: security_detail_body
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 447
+        width: 62
+        height: 63
+      alignment: 9
+      pivot: {x: .5, y: .0700000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: security_detail_arm
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 445
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .523223877, y: .933059931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: security_detail_leg
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 454
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .510811627, y: .912546813}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
