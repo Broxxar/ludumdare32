@@ -69,7 +69,7 @@ public class CharacterBehaviour : MonoBehaviour
 	protected void GetNewMoveTarget(WayPoint destinationWP)
 	{
 		float radius = destinationWP.GetComponent<CircleCollider2D>().radius;
-		_currentMoveTarget = destinationWP.transform.position + (Vector3)Random.insideUnitCircle * radius;
+		_currentMoveTarget = (Vector2)destinationWP.transform.position + (Vector2)(Random.insideUnitCircle * radius);
 	}
 
 	protected void Move(Vector3 moveTarget)
