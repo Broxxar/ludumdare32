@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -16,19 +16,40 @@ public class CharacterBehaviour : MonoBehaviour {
 	private Vector3 targetPosition;
 
 	//move vector for current move
-	private Vector3 currentMoveVector;
+	private Vector3 currentMoveTarget;
 
 	// Use this for initialization
 	void Start () {
 
+
 		if (currentWP == null) {
+
 			//assign current waypoint by closest one on map
+			WayPoint[] allWayPoints = GameObject.FindObjectsOfType<WayPoint> ();
+
+			float minDistance = 10000.0f; 
+			float distance;
+
+			for (int i = 0; i < allWayPoints.Length; i ++){
+
+				distance = Vector3.Distance(this.transform.position, allWayPoints[i].transform.position);
+
+				if (distance < minDistance){
+					minDistance = distance;
+					currentWP = allWayPoints[i];
+				}
+			}
 		}
 
+
+/*
 		if (destinationWP == null) {
-			//assign destination waypoint
+			//assign destination waypoint randomly from current neighbours
+			if (currentWP != null){
+				destinationWP = currentWP.neighbours[Random.Range (0, currentWP.neighbours.Count)];
+			}
 		}
-
+*/
 		previousWP = currentWP;
 		//should call getMoveVector first
 		targetPosition = transform.position;
@@ -38,22 +59,19 @@ public class CharacterBehaviour : MonoBehaviour {
 	void Update () {
 
 		//if arrived at target location, find a random neighbour and move there
-		//Debug.Log (transform.position);
-		//Debug.Log (targetPosition);
 		if (transform.position.Equals(targetPosition)) {
-
-
-
 
 			WayPoint newDestinationWP;
 
 			do {		
-			 newDestinationWP = currentWP.neighbours[Random.Range (0, currentWP.neighbours.Count)];
+				newDestinationWP = currentWP.neighbours[Random.Range (0, currentWP.neighbours.Count)];
 			} while (newDestinationWP == previousWP);
+
+			Debug.Log (newDestinationWP.transform.position);
 
 			previousWP = currentWP;
 			
-			currentMoveVector = getMoveTarget(newDestinationWP);
+			currentMoveTarget = getMoveTarget(newDestinationWP);
 	
 			currentWP = newDestinationWP;
 
@@ -63,11 +81,11 @@ public class CharacterBehaviour : MonoBehaviour {
 		}
 
 		//everyframe move towards target position
-		Move (currentMoveVector);
+		Move (currentMoveTarget);
 	}
 
 	protected Vector3 getMoveTarget(WayPoint destinationWP){
-		//Debug.Log ("In GetMoveVector");
+		//Debug.Log ("In GetMoveTarget");
 		
 
 		Vector3 currentPosition = this.transform.position;
@@ -78,10 +96,8 @@ public class CharacterBehaviour : MonoBehaviour {
 	}
 
 	protected void Move(Vector3 moveTarget){
-		//Debug.Log (moveVector);
-		//Debug.Log (transform.position);
-		//Debug.Log (moveTarget);
 
+		//Debug.Log ("In move");
 		transform.position = Vector3.MoveTowards (transform.position, moveTarget, Time.deltaTime * moveSpeed);
 	}
 
