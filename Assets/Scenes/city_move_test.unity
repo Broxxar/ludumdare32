@@ -4531,6 +4531,7 @@ GameObject:
   - 212: {fileID: 483082544}
   - 114: {fileID: 483082546}
   - 58: {fileID: 483082545}
+  - 114: {fileID: 483082547}
   m_Layer: 0
   m_Name: t_way
   m_TagString: Untagged
@@ -4602,6 +4603,17 @@ MonoBehaviour:
   - {fileID: 1304125090}
   - {fileID: 476091542}
   - {fileID: 373815130}
+--- !u!114 &483082547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483082542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45adea2c858f8de40aa951e022a913fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &486535214
 Prefab:
   m_ObjectHideFlags: 0
@@ -9104,8 +9116,9 @@ GameObject:
   - 212: {fileID: 1090709510}
   - 61: {fileID: 1090709509}
   - 114: {fileID: 1090709508}
+  - 50: {fileID: 1090709512}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Politician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9122,12 +9135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4f53bdaea42e44b373f5448aca87b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWP: {fileID: 121964754}
-  destinationWP: {fileID: 483082546}
-  moveSpeed: 0
-  wpRadius: 1.79999995
   Route:
   - {fileID: 483082546}
+  - {fileID: 1480335346}
 --- !u!61 &1090709509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9173,6 +9183,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!50 &1090709512
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090709507}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1093360744
 GameObject:
   m_ObjectHideFlags: 0
@@ -12114,6 +12139,72 @@ Prefab:
   m_RootGameObject: {fileID: 619432713}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1480335342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1480335344}
+  - 58: {fileID: 1480335343}
+  - 114: {fileID: 1480335345}
+  - 114: {fileID: 1480335346}
+  m_Layer: 0
+  m_Name: RibboncuttingEventStuff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &1480335343
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480335342}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 4
+  m_Center: {x: 0, y: 0}
+--- !u!4 &1480335344
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480335342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.5499992, y: 25.4899998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!114 &1480335345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480335342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c14c037fc9935478a0281c2299ce7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisEvent: 1
+--- !u!114 &1480335346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480335342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6583bf2e681142a16f394d5b55497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  neighbours: []
 --- !u!1001 &1486818921
 Prefab:
   m_ObjectHideFlags: 0
