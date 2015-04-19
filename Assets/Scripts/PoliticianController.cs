@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+	
+	
+public enum PoliticianState{laughing, idle};
 
 public class PoliticianController : MonoBehaviour {
 
@@ -7,14 +10,15 @@ public class PoliticianController : MonoBehaviour {
 	public WayPoint[] Route;//first, 
 	int routeIndex=0;
 	bool performedEvent = false;
-
-
+	PoliticianState currentState;
+	
 
 	// Use this for initialization
 	void Start () {
 
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		currentState = PoliticianState.idle;
 
 	}
 
@@ -27,25 +31,25 @@ public class PoliticianController : MonoBehaviour {
 			if(currentEvent == StoryEvents.RibbonCutting){
 				if(!performedEvent){
 					performedEvent = true;
-					Debug.Log ("Ribbon Cutting going down");
+				//	Debug.Log ("Ribbon Cutting going down");
 					StartCoroutine(RunRibbonEvent());
 				}
 			}else if(currentEvent == StoryEvents.HotDog){
 				if(!performedEvent){
 					performedEvent = true;
-					Debug.Log ("HOTDOG!");
+				//	Debug.Log ("HOTDOG!");
 					StartCoroutine(RunHotDogEvent());
 				}
 			}else if(currentEvent == StoryEvents.StealCandy){
 				if(!performedEvent){
 					performedEvent = true;
-					Debug.Log ("That bitch stole some candy");
+				//	Debug.Log ("That bitch stole some candy");
 					StartCoroutine(RunStealCandyEvent());
 				}
 			}else if(currentEvent == StoryEvents.LudeActs){
 				if(!performedEvent){
 					performedEvent = true;
-					Debug.Log ("OH MY!");
+				//	Debug.Log ("OH MY!");
 					StartCoroutine(RunLudeActsEvent());
 				}
 			}
@@ -58,6 +62,8 @@ public class PoliticianController : MonoBehaviour {
 			routeIndex++;
 	}
 
+
+
 	void HandleOnEventChange ()
 	{
 		performedEvent = false;
@@ -67,13 +73,15 @@ public class PoliticianController : MonoBehaviour {
 	IEnumerator RunRibbonEvent(){
 
 		//Run animation
+		currentState = PoliticianState.laughing;
 		//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 
 		//after event ends send him on his way
 		IncrementRouteIndex();
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		Debug.Log ("event Over");
+		currentState = PoliticianState.idle;
+		//Debug.Log ("event Over");
 
 	}
 
@@ -86,7 +94,7 @@ public class PoliticianController : MonoBehaviour {
 		//after event ends send him on his way
 		IncrementRouteIndex();
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		Debug.Log ("event Over");
+		//Debug.Log ("event Over");
 	}
 
 	IEnumerator RunStealCandyEvent(){
@@ -97,7 +105,7 @@ public class PoliticianController : MonoBehaviour {
 		//after event ends send him on his way
 		IncrementRouteIndex();
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		Debug.Log ("event Over");
+	//	Debug.Log ("event Over");
 	}
 	IEnumerator RunLudeActsEvent(){
 
@@ -108,8 +116,12 @@ public class PoliticianController : MonoBehaviour {
 		//after event ends send him on his way
 		IncrementRouteIndex();
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		Debug.Log ("event Over");
+	//	Debug.Log ("event Over");
 
 
+	}
+
+	public PoliticianState GetState(){
+		return currentState;
 	}
 }

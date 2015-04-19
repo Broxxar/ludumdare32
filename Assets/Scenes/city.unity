@@ -197,7 +197,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &24912236
 Prefab:
@@ -374,7 +374,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &41015658
 MonoBehaviour:
@@ -472,7 +472,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &45221051
 GameObject:
@@ -553,7 +553,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &53828450
 Prefab:
@@ -678,7 +678,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &76853352
 GameObject:
@@ -911,7 +911,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &88938505
 MonoBehaviour:
@@ -1031,7 +1031,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!212 &126822273
 SpriteRenderer:
@@ -1231,7 +1231,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &151570402
 Prefab:
@@ -1412,7 +1412,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &180937484
 GameObject:
@@ -1544,7 +1544,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &220834232
 GameObject:
@@ -1625,7 +1625,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &223602048
 GameObject:
@@ -1706,7 +1706,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &230508967
 Prefab:
@@ -1843,7 +1843,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &245888475
 Prefab:
@@ -2125,7 +2125,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &322040786
 GameObject:
@@ -2677,7 +2677,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &345633943
 Prefab:
@@ -3410,7 +3410,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &351257295
 Prefab:
@@ -3635,7 +3635,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &379578826
 GameObject:
@@ -3743,7 +3743,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &385323213
 MonoBehaviour:
@@ -4196,7 +4196,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &444914861
 Prefab:
@@ -4615,7 +4615,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &474608156
 MonoBehaviour:
@@ -4713,7 +4713,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &476466154
 Prefab:
@@ -4838,7 +4838,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &483082546
 MonoBehaviour:
@@ -5085,7 +5085,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &499510336
 Prefab:
@@ -5279,7 +5279,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &522971797
 MonoBehaviour:
@@ -5627,7 +5627,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &562776851
 MonoBehaviour:
@@ -6051,7 +6051,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &619432717
 MonoBehaviour:
@@ -6244,7 +6244,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &632629800
 GameObject:
@@ -6325,7 +6325,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &633565606
 GameObject:
@@ -6405,7 +6405,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &633850815
 GameObject:
@@ -6470,7 +6470,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &633850819
 MonoBehaviour:
@@ -6553,7 +6553,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &643974905
 MonoBehaviour:
@@ -7783,7 +7783,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &680550946
 MonoBehaviour:
@@ -8812,7 +8812,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &744977627
 MonoBehaviour:
@@ -9068,7 +9068,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &784098336
 GameObject:
@@ -9901,7 +9901,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &800947390
 GameObject:
@@ -10496,7 +10496,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &897250547
 MonoBehaviour:
@@ -10667,7 +10667,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &920046237
 GameObject:
@@ -10732,7 +10732,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &920046241
 MonoBehaviour:
@@ -11194,7 +11194,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1022152096
 GameObject:
@@ -11448,7 +11448,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1041056999
 GameObject:
@@ -11529,7 +11529,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1061901441
 Prefab:
@@ -11818,7 +11818,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1089624810
 Prefab:
@@ -11943,7 +11943,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1097732974
 GameObject:
@@ -12075,7 +12075,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1098219256
 Prefab:
@@ -12460,7 +12460,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1112590883
 GameObject:
@@ -12541,7 +12541,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1118943744
 Prefab:
@@ -13311,7 +13311,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1246783390
 GameObject:
@@ -13443,7 +13443,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1275844630
 GameObject:
@@ -13866,7 +13866,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1279180580
 MonoBehaviour:
@@ -13991,7 +13991,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1290534827
 MonoBehaviour:
@@ -14179,7 +14179,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1294092500
 MonoBehaviour:
@@ -14277,7 +14277,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1300652575
 Prefab:
@@ -14446,7 +14446,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1309285186
 Prefab:
@@ -15209,9 +15209,10 @@ MonoBehaviour:
   radius: 1
   neighbours: []
   ThisEvent: 0
-  EventRequiredItems: []
-  EventRestrictedItems:
+  EventRequiredItems:
   - {fileID: 1636437765}
+  EventRestrictedItems: []
+  RequiredState: 0
 --- !u!58 &1386096532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15302,7 +15303,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1422324217
 Prefab:
@@ -15439,7 +15440,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1434026085
 GameObject:
@@ -16274,7 +16275,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1572864196
 GameObject:
@@ -17108,7 +17109,7 @@ GameObject:
   - 50: {fileID: 1636437764}
   - 58: {fileID: 1636437765}
   m_Layer: 0
-  m_Name: TempMayor
+  m_Name: Politician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17655,7 +17656,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1658250057
 MonoBehaviour:
@@ -18046,7 +18047,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1711733014
 MonoBehaviour:
@@ -18144,7 +18145,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1723751921
 GameObject:
@@ -18209,7 +18210,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1723751925
 MonoBehaviour:
@@ -18560,7 +18561,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1753577309
 GameObject:
@@ -18608,6 +18609,7 @@ MonoBehaviour:
   EventRequiredItems:
   - {fileID: 1636437765}
   EventRestrictedItems: []
+  RequiredState: 0
 --- !u!58 &1753577312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19048,7 +19050,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1 &1825425497
 GameObject:
@@ -19525,7 +19527,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1862438045
 Prefab:
@@ -19857,7 +19859,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &1889363502
 Prefab:
@@ -20431,7 +20433,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!212 &1962051326
 SpriteRenderer:
@@ -20709,7 +20711,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!114 &1982629610
 MonoBehaviour:
@@ -21445,7 +21447,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.79999995
+  m_Radius: 1.39999998
   m_Center: {x: 0, y: 0}
 --- !u!1001 &2098154019
 Prefab:

@@ -5,11 +5,13 @@ public class PlayerController : MonoBehaviour
 {
 	public float MoveSpeed;
 	public float ViewRotationStrength;
-	
+
+
 	Animator _anim;
 	Transform _view;
 	PlayerVirtualCamera _playerCam;
 	BoxCollider2D _photoCollider;
+	PoliticianController _politician;
 
 	int _cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
 		_view = transform.FindChild("view");
 		_playerCam = _view.GetComponentInChildren<PlayerVirtualCamera>();
 		_photoCollider = _view.GetComponentInChildren<BoxCollider2D>();
+		_politician = GameObject.FindObjectOfType<PoliticianController>();
 
 	}
 	
@@ -62,7 +65,7 @@ public class PlayerController : MonoBehaviour
 		foreach(EventWayPoint wp in EventManager.Instance.eventWPs){
 
 			if(wp.ThisEvent == currentEvent){
-				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp);
+				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
 			}
 		}
 		Debug.Log (isPhotoGood);

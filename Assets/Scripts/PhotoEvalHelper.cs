@@ -5,7 +5,7 @@ public static class PhotoEvalHelper {
 
 	static float RESRICTED_ALLOWANCE = 1.0f;
 
-	public static bool EvaluatePhoto(Collider2D photoArea, EventWayPoint currentEvent){
+	public static bool EvaluatePhoto(Collider2D photoArea, EventWayPoint currentEvent, PoliticianState state){
 
 
 		int numfoundObjects = 0;
@@ -26,12 +26,15 @@ public static class PhotoEvalHelper {
 				return false;
 			}
 		}
+		if(state == currentEvent.RequiredState){
+			return true;
+		}
 
-		return true;
+		return false;
 	}
 
 	static bool RequiredObjectContained(Collider2D photoArea, Collider2D obj){
-		Debug.Log ("Checking Required Item");
+	
 		//check without Z
 		Vector2 centerBB = photoArea.bounds.center;
 		Vector2 topLeft = centerBB+ new Vector2(-photoArea.bounds.extents.x, photoArea.bounds.extents.y); 

@@ -6,6 +6,7 @@ public class EventWayPoint : WayPoint{
 	public StoryEvents ThisEvent;
 	public Collider2D[] EventRequiredItems;
 	public CircleCollider2D[] EventRestrictedItems;
+	public PoliticianState RequiredState;
 
 
 	void OnTriggerEnter2D(Collider2D other){
