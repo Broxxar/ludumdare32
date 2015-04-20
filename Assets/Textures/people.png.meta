@@ -292,8 +292,8 @@ TextureImporter:
         y: 210
         width: 30
         height: 57
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .493791193, y: .928062022}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: doge_upper_head
       rect:
@@ -313,7 +313,7 @@ TextureImporter:
         width: 116
         height: 194
       alignment: 9
-      pivot: {x: .609468937, y: .434544355}
+      pivot: {x: .582640529, y: .303002715}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: doge_tail
       rect:

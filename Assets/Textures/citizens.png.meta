@@ -16,35 +16,35 @@ TextureImporter:
     21300022: citizen_body_4
     21300024: citizen_body_10
     21300026: citizen_head_4
-    21300028: citizen_arm_6
-    21300030: citizen_arm_0
-    21300032: citizen_arm_7
-    21300034: citizen_arm_1
-    21300036: citizen_arm_8
-    21300038: citizen_arm_2
-    21300040: citizen_arm_9
-    21300042: citizen_arm_3
-    21300044: citizen_arm_10
-    21300046: citizen_arm_4
-    21300048: citizen_arm_11
-    21300050: citizen_arm_5
+    21300028: citizen_leg_6
+    21300030: citizen_leg_0
+    21300032: citizen_leg_7
+    21300034: citizen_leg_1
+    21300036: citizen_leg_8
+    21300038: citizen_leg_2
+    21300040: citizen_leg_9
+    21300042: citizen_leg_3
+    21300044: citizen_leg_10
+    21300046: citizen_leg_4
+    21300048: citizen_leg_11
+    21300050: citizen_leg_5
     21300052: citizen_head_9
     21300054: citizen_head_7
     21300056: citizen_head_11
-    21300058: citizen_leg_0
-    21300060: citizen_leg_3
-    21300062: citizen_leg_1
+    21300058: citizen_arm_0
+    21300060: citizen_arm_3
+    21300062: citizen_arm_1
     21300064: citizen_head_2
     21300066: citizen_head_6
     21300068: citizen_head_10
     21300070: citizen_head_8
-    21300072: citizen_leg_2
-    21300074: citizen_leg_5
-    21300076: citizen_leg_11
+    21300072: citizen_arm_2
+    21300074: citizen_arm_5
+    21300076: citizen_arm_11
     21300078: citizen_head_3
     21300080: citizen_head_1
     21300082: citizen_head_5
-    21300084: citizen_leg_white
+    21300084: citizen_arm_white
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -226,7 +226,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .548419178, y: .0413788743}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_6
+    - name: citizen_leg_6
       rect:
         serializedVersion: 2
         x: 2
@@ -236,7 +236,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .499999553, y: .90978092}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_0
+    - name: citizen_leg_0
       rect:
         serializedVersion: 2
         x: 37
@@ -246,7 +246,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .482568741, y: .918954968}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_7
+    - name: citizen_leg_7
       rect:
         serializedVersion: 2
         x: 70
@@ -256,7 +256,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .488379151, y: .915896773}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_1
+    - name: citizen_leg_1
       rect:
         serializedVersion: 2
         x: 104
@@ -266,7 +266,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .499999732, y: .925071299}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_8
+    - name: citizen_leg_8
       rect:
         serializedVersion: 2
         x: 138
@@ -276,7 +276,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .49398908, y: .918954968}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_2
+    - name: citizen_leg_2
       rect:
         serializedVersion: 2
         x: 172
@@ -286,7 +286,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .48797819, y: .918954968}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_9
+    - name: citizen_leg_9
       rect:
         serializedVersion: 2
         x: 206
@@ -296,7 +296,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .49398908, y: .918954968}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_3
+    - name: citizen_leg_3
       rect:
         serializedVersion: 2
         x: 239
@@ -306,7 +306,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .499999493, y: .912839115}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_10
+    - name: citizen_leg_10
       rect:
         serializedVersion: 2
         x: 274
@@ -316,7 +316,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .506009877, y: .922013104}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_4
+    - name: citizen_leg_4
       rect:
         serializedVersion: 2
         x: 308
@@ -326,7 +326,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .505809546, y: .918954968}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_11
+    - name: citizen_leg_11
       rect:
         serializedVersion: 2
         x: 344
@@ -336,7 +336,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .49398908, y: .915896773}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_arm_5
+    - name: citizen_leg_5
       rect:
         serializedVersion: 2
         x: 377
@@ -376,7 +376,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .489239931, y: .05285744}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_0
+    - name: citizen_arm_0
       rect:
         serializedVersion: 2
         x: 309
@@ -386,7 +386,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .493543833, y: .942478597}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_3
+    - name: citizen_arm_3
       rect:
         serializedVersion: 2
         x: 339
@@ -396,7 +396,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .499998868, y: .942478597}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_1
+    - name: citizen_arm_1
       rect:
         serializedVersion: 2
         x: 371
@@ -446,7 +446,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .477013886, y: .119687684}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_2
+    - name: citizen_arm_2
       rect:
         serializedVersion: 2
         x: 309
@@ -456,7 +456,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .493543833, y: .929070354}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_5
+    - name: citizen_arm_5
       rect:
         serializedVersion: 2
         x: 339
@@ -466,7 +466,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .493542701, y: .931751907}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_11
+    - name: citizen_arm_11
       rect:
         serializedVersion: 2
         x: 371
@@ -506,7 +506,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .494124323, y: .05884552}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: citizen_leg_white
+    - name: citizen_arm_white
       rect:
         serializedVersion: 2
         x: 308
