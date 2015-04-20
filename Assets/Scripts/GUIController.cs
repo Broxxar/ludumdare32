@@ -13,14 +13,22 @@ public class GUIController : MonoBehaviour
 
 	public GameObject PolaroidPrefab;
 
-	public void SpawnPolaroid (Texture2D photoTexture)
+	public void SpawnPolaroid (Sprite photoSprite)
 	{
 		GameObject newPolaroid = GameObject.Instantiate(PolaroidPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		newPolaroid.name = PolaroidPrefab.name;
 		newPolaroid.transform.SetParent(transform);
 		
-		Sprite photoSprite = Sprite.Create(photoTexture, new Rect(0,0, 512, 512), Vector2.zero);
-		
 		newPolaroid.transform.FindChild("image").GetComponent<Image>().sprite = photoSprite;
+		
+		StartCoroutine(DespawnAsync(newPolaroid));
+	}
+	
+	IEnumerator DespawnAsync (GameObject polaroid)
+	{
+		yield return new WaitForSeconds(1.5f);
+		polaroid.GetComponent<Animator>().SetTrigger("Despawn");
+		yield return new WaitForSeconds(0.25f);
+		Destroy(polaroid);
 	}
 }
