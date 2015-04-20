@@ -16,6 +16,7 @@ TextureImporter:
     21300022: grass_edge
     21300024: grass_inner
     21300026: hospital
+    21300028: news_corp_sign
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -194,6 +195,16 @@ TextureImporter:
         y: 6
         width: 755
         height: 767
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: news_corp_sign
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 1831
+        width: 315
+        height: 81
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

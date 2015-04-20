@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
 	Transform _view;
 	PlayerVirtualCamera _playerCam;
 	BoxCollider2D _photoCollider;
-	PoliticianController _politician;
 
 	Dictionary<StoryEvents, PhotoInfo> SavedPhotos = new Dictionary<StoryEvents, PhotoInfo>();
 
@@ -32,8 +31,8 @@ public class PlayerController : MonoBehaviour
 		_view = transform.FindChild("view");
 		_playerCam = _view.GetComponentInChildren<PlayerVirtualCamera>();
 		_photoCollider = _view.GetComponentInChildren<BoxCollider2D>();
-		_politician = GameObject.FindObjectOfType<PoliticianController>();
 
+		DontDestroyOnLoad(gameObject);
 	}
 	
 	void Update ()
@@ -87,7 +86,7 @@ public class PlayerController : MonoBehaviour
 			{
 				if(wp != null && wp.ThisEvent == currentEvent){
 
-					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider, wp, _politician.GetState());
+					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider, wp, GameObject.FindObjectOfType<PoliticianController>().GetState());
 					isPhotoValid = PhotoEvalHelper.ValidatePhoto(_photoCollider, wp);
 
 					if (isPhotoValid)

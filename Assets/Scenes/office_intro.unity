@@ -544,6 +544,59 @@ Transform:
   - {fileID: 1643646019}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!1 &247381401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 247381404}
+  - 58: {fileID: 247381403}
+  - 114: {fileID: 247381402}
+  m_Layer: 0
+  m_Name: load_trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &247381402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247381401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c891890860b01ce4a8048d6dbc8ee06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: city
+  NewPlayerPosition: {x: 20, y: 14, z: 14}
+--- !u!58 &247381403
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247381401}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1.23000002
+  m_Center: {x: 0, y: 0}
+--- !u!4 &247381404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247381401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.540000021, y: -4.76000023, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &253783715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bf5ddd1cdb51c429f1f91af4ce447f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundTolerance: 5
+  boundTolerance: 0
 --- !u!4 &498195728
 Transform:
   m_ObjectHideFlags: 0
@@ -6498,7 +6551,7 @@ GameObject:
   - 81: {fileID: 1936299137}
   m_Layer: 9
   m_Name: journalist
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7550,6 +7603,10 @@ Prefab:
     - target: {fileID: 11431576, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
       propertyPath: isInitialized
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 190684, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 458b574a179421e4b853b7c6f9c825ba, type: 2}

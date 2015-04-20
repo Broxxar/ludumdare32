@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour
 		Vector3 newPosition = FollowTarget.position;
 		newPosition.z = FixedZ;
 		transform.position = newPosition;
+		
+		DontDestroyOnLoad(gameObject);
 	}
 	
 	void LateUpdate ()

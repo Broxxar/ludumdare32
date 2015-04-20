@@ -75,8 +75,6 @@ public class IntroController : MonoBehaviour
 		GUIController.Instance.ShowText(_dialogue[6]);
 		yield return StartCoroutine(WaitForClick());
 		GUIController.Instance.HideText();
-		
-		SceneController.Instance.FadeToScene("city");
 	}
 	
 	IEnumerator WaitForClick ()

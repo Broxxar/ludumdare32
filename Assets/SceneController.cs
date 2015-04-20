@@ -15,16 +15,17 @@ public class SceneController : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
-	public void FadeToScene (string sceneName)
+	public void FadeToScene (string sceneName, Transform playerTransform, Vector3 newPosition)
 	{
-		StartCoroutine(FadeToSceneAsync(sceneName));
+		StartCoroutine(FadeToSceneAsync(sceneName, playerTransform, newPosition));
 	}
 	
-	IEnumerator FadeToSceneAsync(string sceneName)
+	IEnumerator FadeToSceneAsync(string sceneName, Transform playerTransform, Vector3 newPosition)
 	{
 		GUIController.Instance.FadeToBlack();
 		yield return new WaitForSeconds (1.1f);
 		Application.LoadLevel(sceneName);
+		playerTransform.position = newPosition;
 		GUIController.Instance.FadeInFromBlack();
 	}
 }
