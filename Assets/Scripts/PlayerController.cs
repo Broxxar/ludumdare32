@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
 			}
 		}
-
+		Debug.Log (isPhotoGood);
 		yield return new WaitForSeconds(0.45f);
 		// Post Photo
 		
