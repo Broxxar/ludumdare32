@@ -5,7 +5,6 @@ using System.Linq;
 public class CharacterBehaviour : MonoBehaviour
 {
 	public WayPoint CurrentWP;
-	public WayPoint DestinationWP;
 	public EventWayPoint EventWP;
 	public float MoveSpeed;
 	[Range (0, 1)]
@@ -68,7 +67,15 @@ public class CharacterBehaviour : MonoBehaviour
 	{
 		StartCoroutine(IdleAsync(Random.Range(MinIdleTime, MaxIdleTime)));
 	}
-	
+
+	public void BeIdle(){
+		_idling = true;
+	}
+
+	public void StopIdle(){
+		_idling = false;
+	}
+
 	IEnumerator IdleAsync (float idleDuration)
 	{
 		_idling = true;

@@ -342,7 +342,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: RoughinUp
+    m_ConditionEvent: IsRough
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1

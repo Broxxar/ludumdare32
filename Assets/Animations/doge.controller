@@ -7,7 +7,13 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: doge
   serializedVersion: 2
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: stepAttack
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -32,8 +38,8 @@ Transition:
   m_TransitionDuration: .375
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: stepAttack
     m_EventTreshold: 0
     m_ExitTime: .625
   m_Atomic: 1
@@ -52,8 +58,8 @@ Transition:
   m_TransitionDuration: .428571433
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: stepAttack
     m_EventTreshold: 0
     m_ExitTime: .571428537
   m_Atomic: 1
@@ -128,6 +134,9 @@ StateMachine:
       first: {fileID: 110211340}
       second:
       - {fileID: 110104302}
+    data:
+      first: {fileID: 110260212}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 72, y: -36, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

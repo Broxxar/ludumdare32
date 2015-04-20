@@ -2,7 +2,7 @@
 using System.Collections;
 	
 	
-public enum PoliticianState{laughing, walking};
+public enum PoliticianState{laughing, walking, hurtDog};
 
 public class PoliticianController : MonoBehaviour {
 
@@ -22,7 +22,7 @@ public class PoliticianController : MonoBehaviour {
 	int cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int isWalkingHash = Animator.StringToHash("IsWalking");
 	int stepRibbonHash = Animator.StringToHash("StepRibbon");
-	int hotDogHash = Animator.StringToHash("StepHotDog");
+	int roughUpHash = Animator.StringToHash("IsRough");
 
 
 
@@ -37,10 +37,16 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 	void Update(){
+		StoryEvents currentEvent = EventManager.Instance.currentEvent;
 		if((Vector2)transform.position != (Vector2)moveTarget){
+			if(currentEvent == StoryEvents.HotDog){
+				anim.SetBool(roughUpHash, true);
+				currentState = PoliticianState.hurtDog;
+			}
 			UpdateMovement();
 		}else{
-			StoryEvents currentEvent = EventManager.Instance.currentEvent;
+
+		
 			if(currentEvent == StoryEvents.RibbonCutting){
 				if(!performedEvent){
 					performedEvent = true;
@@ -48,9 +54,10 @@ public class PoliticianController : MonoBehaviour {
 					StartCoroutine(RunRibbonEvent());
 				}
 			}else if(currentEvent == StoryEvents.HotDog){
+
 				if(!performedEvent){
 					performedEvent = true;
-				//	Debug.Log ("HOTDOG!");
+					moveSpeed = 3f;
 					StartCoroutine(RunHotDogEvent());
 				}
 			}else if(currentEvent == StoryEvents.StealCandy){
@@ -81,6 +88,7 @@ public class PoliticianController : MonoBehaviour {
 		}
 		IncrementRouteIndex();
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+	
 	}
 	
 	public void IncrementRouteIndex(){
@@ -134,15 +142,18 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 	IEnumerator RunHotDogEvent(){
-
+		//Debug.Log ("Hotdogscoroutine started");
 		//Run animation
 
 		//startDogs 
-		anim.SetTrigger (hotDogHash);
+		//anim.SetBool (roughUpHash, true);
+		//currentState = PoliticianState.hurtDog;
 
 		//wait for it to end
-		yield return new WaitForSeconds (5.0f);
-		
+		yield return new WaitForSeconds (2.0f);
+		currentState = PoliticianState.walking;
+		anim.SetBool (roughUpHash, false);
+		moveSpeed = 3;
 
 		//Debug.Log ("event Over");
 		EventEnds ();
