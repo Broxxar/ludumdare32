@@ -6,11 +6,14 @@ public class CharacterBehaviour : MonoBehaviour
 {
 	public WayPoint CurrentWP;
 	public WayPoint DestinationWP;
+	public EventWayPoint EventWP;
 	public float MoveSpeed;
 	[Range (0, 1)]
 	public float ChanceToIdle;
 	public float MinIdleTime;
 	public float MaxIdleTime;
+
+
 
 	Animator _anim;
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
@@ -26,6 +29,9 @@ public class CharacterBehaviour : MonoBehaviour
 
 	void Start () 
 	{
+		if(EventWP != null){
+			_idling = true;
+		}
 		CurrentWP = CurrentWP ?? GameObject.FindObjectsOfType<WayPoint>()
 			.OrderBy(wp => Vector3.Distance((Vector2)wp.transform.position, (Vector2)transform.position))
 			.First().GetComponent<WayPoint>();
@@ -35,6 +41,10 @@ public class CharacterBehaviour : MonoBehaviour
 
 	void Update ()
 	{
+		if(EventWP != null && EventWP.HasFinished){
+			_idling = false;
+		}
+
 		// If arrived at target location, find a random neighbour and set it as the new Move Target
 		if ((Vector2)transform.position == (Vector2)_currentMoveTarget) {	
 			_previousWP = CurrentWP;
