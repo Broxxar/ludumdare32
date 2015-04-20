@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
 	PlayerVirtualCamera _playerCam;
 	BoxCollider2D _photoCollider;
 	PoliticianController _politician;
+
+	Dictionary<StoryEvents, PhotoInfo> SavedPhotos = new Dictionary<StoryEvents, PhotoInfo>();
 
 	int _cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
@@ -66,7 +69,9 @@ public class PlayerController : MonoBehaviour
 		// Take Photo
 		_playerCam.Capture();
 		yield return new WaitForEndOfFrame();
-		GUIController.Instance.SpawnPolaroid(_playerCam.RecentPhoto);
+		
+		Sprite photoSprite = Sprite.Create(_playerCam.RecentPhoto, new Rect(0,0, 512, 512), Vector2.zero);
+		GUIController.Instance.SpawnPolaroid(photoSprite);
 
 		//Evaluate Photo
 		bool isPhotoGood = false;
@@ -79,6 +84,23 @@ public class PlayerController : MonoBehaviour
 				if(wp != null && wp.ThisEvent == currentEvent){
 					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
 				}
+			}
+			
+			PhotoInfo newPhotoInfo = new PhotoInfo
+			{
+				PhotoSprite = photoSprite,
+				AssociatedEvent = currentEvent,
+				Successful = isPhotoGood
+			};
+			
+			if (SavedPhotos.ContainsKey(currentEvent))
+			{
+				if (newPhotoInfo.Successful && !SavedPhotos[currentEvent].Successful)
+					SavedPhotos[currentEvent] = newPhotoInfo;
+			}
+			else
+			{
+				SavedPhotos.Add(currentEvent, newPhotoInfo);
 			}
 			
 			Debug.Log (isPhotoGood);
