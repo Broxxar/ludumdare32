@@ -6,6 +6,7 @@ public class CharacterBehaviour : MonoBehaviour
 {
 	public WayPoint CurrentWP;
 	public WayPoint DestinationWP;
+	public EventWayPoint EventWP;
 	public float MoveSpeed;
 	[Range (0, 1)]
 	public float ChanceToIdle;
@@ -29,6 +30,9 @@ public class CharacterBehaviour : MonoBehaviour
 		CurrentWP = CurrentWP ?? GameObject.FindObjectsOfType<WayPoint>()
 			.OrderBy(wp => Vector3.Distance((Vector2)wp.transform.position, (Vector2)transform.position))
 			.First().GetComponent<WayPoint>();
+		if(EventWP != null){
+					_idling = true;
+		}
 
 		GetNewMoveTarget(CurrentWP);
 	}
@@ -47,7 +51,9 @@ public class CharacterBehaviour : MonoBehaviour
 			if (Random.Range(0f, 1f) < ChanceToIdle)
 				Idle ();
 		}
-		
+		if(EventWP != null && EventWP.HasFinished){
+				_idling = false;
+		}
 		if (!_idling)
 			Move (_currentMoveTarget);
 			

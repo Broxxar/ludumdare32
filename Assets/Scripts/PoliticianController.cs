@@ -22,6 +22,7 @@ public class PoliticianController : MonoBehaviour {
 	int cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int isWalkingHash = Animator.StringToHash("IsWalking");
 	int stepRibbonHash = Animator.StringToHash("StepRibbon");
+	int hotDogHash = Animator.StringToHash("StepHotDog");
 
 
 
@@ -135,7 +136,11 @@ public class PoliticianController : MonoBehaviour {
 	IEnumerator RunHotDogEvent(){
 
 		//Run animation
-			//wait for it to end
+
+		//startDogs 
+		anim.SetTrigger (hotDogHash);
+
+		//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 		
 
