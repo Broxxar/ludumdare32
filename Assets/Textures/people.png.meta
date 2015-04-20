@@ -12,6 +12,28 @@ TextureImporter:
     21300014: security_detail_body
     21300016: security_detail_arm
     21300018: security_detail_leg
+    21300020: poli_leg
+    21300022: poli_head_normal
+    21300024: poli_head_surprised
+    21300026: poli_head_crazed
+    21300028: poli_arm
+    21300030: poli_body
+    21300032: poli_back_of_head
+    21300034: poli_head_idle
+    21300036: poli_head_shocked
+    21300038: ribbon_hoop
+    21300040: scissor_blade
+    21300042: ribbon_end
+    21300044: ribbon_main
+    21300046: hot_dog_guy_leg
+    21300048: doge_upper_head
+    21300050: hot_dog_guy
+    21300052: doge_tail
+    21300054: doge_body
+    21300056: doge_leg
+    21300058: doge_lower_head
+    21300060: hot_dog_cart
+    21300062: fire_hydrant
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -152,6 +174,206 @@ TextureImporter:
         height: 57
       alignment: 9
       pivot: {x: .510811627, y: .912546813}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_leg
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 453
+        width: 29
+        height: 57
+      alignment: 9
+      pivot: {x: .488216013, y: .922695756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_head_idle
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 311
+        width: 94
+        height: 82
+      alignment: 9
+      pivot: {x: .50319159, y: .052683387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_head_shocked
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 311
+        width: 93
+        height: 82
+      alignment: 9
+      pivot: {x: .50319159, y: .0526833907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_head_crazed
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 311
+        width: 93
+        height: 82
+      alignment: 9
+      pivot: {x: .50319159, y: .0526833907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_arm
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 242
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: .511870325, y: .938833356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_body
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 228
+        width: 59
+        height: 78
+      alignment: 9
+      pivot: {x: .5, y: .304419875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poli_back_of_head
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 206
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ribbon_hoop
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 165
+        width: 77
+        height: 57
+      alignment: 9
+      pivot: {x: .871833086, y: .500000238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: scissor_blade
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 68
+        width: 44
+        height: 118
+      alignment: 9
+      pivot: {x: .231229082, y: .362857372}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ribbon_end
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 66
+        width: 48
+        height: 92
+      alignment: 9
+      pivot: {x: .785274267, y: .885627747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ribbon_main
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 7
+        width: 141
+        height: 50
+      alignment: 9
+      pivot: {x: .0938840434, y: .562241733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hot_dog_guy_leg
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 210
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: doge_upper_head
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 225
+        width: 71
+        height: 41
+      alignment: 9
+      pivot: {x: .168670222, y: .206311852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hot_dog_guy
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 7
+        width: 116
+        height: 194
+      alignment: 9
+      pivot: {x: .609468937, y: .434544355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: doge_tail
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 162
+        width: 24
+        height: 56
+      alignment: 9
+      pivot: {x: .608333588, y: .0803574175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: doge_body
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 198
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: doge_leg
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 162
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: .5, y: .906250477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: doge_lower_head
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 160
+        width: 59
+        height: 36
+      alignment: 9
+      pivot: {x: .119977534, y: .308052063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hot_dog_cart
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 4
+        width: 141
+        height: 152
+      alignment: 9
+      pivot: {x: .581053615, y: .0739350095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_hydrant
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 7
+        width: 63
+        height: 97
+      alignment: 9
+      pivot: {x: .489921927, y: .153084725}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

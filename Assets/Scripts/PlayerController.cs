@@ -62,14 +62,14 @@ public class PlayerController : MonoBehaviour
 		//Evaluate Photo
 		bool isPhotoGood = false;
 		StoryEvents currentEvent = EventManager.Instance.currentEvent;
-		foreach(EventWayPoint wp in EventManager.Instance.eventWPs){
-
+		
+		foreach(EventWayPoint wp in EventManager.Instance.eventWPs)
+		{
 			if(wp.ThisEvent == currentEvent){
 				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
 			}
 		}
 		Debug.Log (isPhotoGood);
-		
 		yield return new WaitForSeconds(0.45f);
 		// Post Photo
 		
