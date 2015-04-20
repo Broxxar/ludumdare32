@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float ViewRotationStrength;
 
 	public bool Stunned = false;
+	public bool Frozen = false;
 
 	Animator _anim;
 	Transform _view;
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
 	{
-		if (!Stunned) {
+		if (!Stunned && !Frozen)
+		{
 			UpdateCameraShoot ();
 			UpdateMovement ();
 			UpdateView();
