@@ -12,11 +12,11 @@ public class CharacterBehaviour : MonoBehaviour
 	public float MinIdleTime;
 	public float MaxIdleTime;
 
-	Animator _anim;
-	int _isWalkingHash = Animator.StringToHash("IsWalking");
+	protected Animator _anim;
+	protected int _isWalkingHash = Animator.StringToHash("IsWalking");
 	
 	WayPoint _previousWP;
-	bool _idling;
+	protected bool _idling;
 	Vector3 _currentMoveTarget;
 
 	void Awake ()

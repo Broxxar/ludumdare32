@@ -8,52 +8,97 @@ public class SecurityBehaviour : CharacterBehaviour {
 	//the photographer
 	public GameObject photographer;
 
-	//area in which taking a photo aggroes security
-	private Collider2D threatRange;
-
 	//radius where security gaurds 
-	public float guardRadius = 2.0f;
-	public float aggroThreshold = 4.0f;
+	public Vector3 guardOffset = new Vector3(1,1,0);
 
-	Transform view;
+	public bool aggressive = false;
+
+	private Vector3 poliPositionLast;
+	private Vector3 poliPositionCurrent;
+
+	private int roughing = Animator.StringToHash("IsRough");
+
+	Transform _view;
 
 	// Use this for initialization
 	void Start () {
 
-		threatRange = transform.FindChild ("view").GetComponentInChildren<PolygonCollider2D> ();
-		//politician = FindObjectOfType ();
-		//photographer = FindObjectOfType ();
+		_view = transform.FindChild ("view");
+		_anim = GetComponent<Animator>();
+
+		//politician = GameObject.FindObjectOfType<PoliticianController>();
+		//photographer = GameObject.FindObjectOfType<PlayerController> ();
+
+		poliPositionLast = politician.transform.position;
+		poliPositionCurrent = politician.transform.position;
+
+		_idling = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		poliPositionLast = poliPositionCurrent;
+		poliPositionCurrent = politician.transform.position;
 
-		// photog takes picture close to security
-		if (threatRange.bounds.Contains(photographer.transform.position) /*&& takingphoto */) {
-			Move(photographer.transform.position);
+		if (aggressive) {
+			Move (photographer.transform.position);
+			UpdateView(photographer.transform.position - transform.position);
+
+			_anim.SetBool(roughing, !_isWalkingHash, !_idling);
+		} else {
+
+			Move (getGuardPosition ());
+			_anim.SetBool(_isWalkingHash, !_idling);
+
+			// follow politician when moving
+			if (poliPositionCurrent != poliPositionLast) {
+
+				// look at direction of movement
+				UpdateView (poliPositionCurrent - transform.position);
+			}
+
+			// if stationary, do some scanning
+			else {
+				UpdateView (transform.position - poliPositionCurrent);
+				_idling = true;
+			}
 		}
-
-		// follow politician when moving
-		else if (!politician.rigidbody2D.IsSleeping()){
-			Move (getRandomNearPolitician());
-		}
-
-		// if stationary, do some scanning
-//		else{
-
-//		}
-
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.name.Equals ("player")) {
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.CompareTag("Player")) {
+			Debug.Log ("On trigger enter journalist");
+			aggressive = true;
 			//dosomething to the player
 		}
 	}
 
-	Vector3 getRandomNearPolitician(){
-		return politician.transform.position + new Vector3(Random.Range(-guardRadius, guardRadius), Random.Range(-guardRadius, guardRadius), 0);
+	void OnTriggerExit2D(Collider2D other){
+		if (other.CompareTag("Player")) {
+			Debug.Log ("On trigger exit journalist");
+			aggressive = false;
+		}
+	}
+
+	Vector3 getGuardPosition(){
+		return politician.transform.position + guardOffset;
+		//return politician.transform.position + (Vector3)Random.insideUnitCircle * guardRadius;
+	}
+
+
+	void UpdateView (Vector2 desiredFacing){
+
+		Quaternion desiredRotation = Quaternion.FromToRotation(Vector2.up, desiredFacing);
+		
+		if (desiredRotation.eulerAngles.y != 0)
+		{
+			Vector2 fixedEuler = desiredRotation.eulerAngles;
+			fixedEuler.y = 0;
+			desiredRotation.eulerAngles = fixedEuler;
+		}
+		
+		_view.rotation = Quaternion.Lerp(_view.rotation, desiredRotation, 10 * Time.deltaTime);
 	}
 
 
