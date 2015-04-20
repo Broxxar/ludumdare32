@@ -390,8 +390,8 @@ TextureImporter:
         y: 307
         width: 90
         height: 104
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .551737487, y: .043314714}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: stroller
       rect:
