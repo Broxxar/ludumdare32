@@ -41,11 +41,13 @@ public class SecurityBehaviour : CharacterBehaviour {
 		poliPositionLast = poliPositionCurrent;
 		poliPositionCurrent = politician.transform.position;
 
+		_anim.SetBool(roughing, aggressive);
+
 		if (aggressive) {
 			Move (photographer.transform.position);
 			UpdateView(photographer.transform.position - transform.position);
 
-			_anim.SetBool(roughing, !_isWalkingHash, !_idling);
+
 		} else {
 
 			Move (getGuardPosition ());
