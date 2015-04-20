@@ -124,6 +124,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 497652}
   - 95: {fileID: 9597646}
+  - 114: {fileID: 11400000}
+  - 58: {fileID: 5800000}
   m_Layer: 0
   m_Name: ribbon
   m_TagString: Untagged
@@ -321,6 +323,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 497652}
   m_RootOrder: 0
+--- !u!58 &5800000
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197652}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .800000012
+  m_Center: {x: 1.25, y: 0}
 --- !u!60 &6047664
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -370,6 +383,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f2afbeeb2829a47a5310df9f35f016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11411078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,7 +433,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .999095798, y: -.0425156616, z: 0}
     direction: {x: .0425156616, y: .999095798, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 1
   - parent: {fileID: 0}
@@ -421,7 +445,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .999132991, y: -.0416314527, z: 0}
     direction: {x: .0416314527, y: .999132991, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -433,7 +457,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .999108553, y: -.0422141366, z: 0}
     direction: {x: .0422141366, y: .999108553, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -445,7 +469,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .999260902, y: -.0384414271, z: 0}
     direction: {x: .0384414271, y: .999260902, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -457,7 +481,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: 1, y: -0, z: 0}
     direction: {x: 0, y: 1, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -469,7 +493,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .980572045, y: .196159288, z: 0}
     direction: {x: -.196159288, y: .980572045, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -481,7 +505,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .982872486, y: .184287131, z: 0}
     direction: {x: -.184287131, y: .982872486, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -493,7 +517,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .981615603, y: .190868542, z: 0}
     direction: {x: -.190868542, y: .981615603, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -505,7 +529,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .832034051, y: .554724634, z: 0}
     direction: {x: -.554724634, y: .832034051, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 1
     isStart: 0
   - parent: {fileID: 0}
@@ -517,7 +541,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: 0, y: 1, z: 0}
     direction: {x: -1, y: 0, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -529,7 +553,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.936330974, y: .351118535, z: 0}
     direction: {x: -.351118535, y: -.936330974, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -541,7 +565,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.989203036, y: .146551698, z: 0}
     direction: {x: -.146551698, y: -.989203036, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -553,7 +577,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.983453333, y: .181161612, z: 0}
     direction: {x: -.181161612, y: -.983453333, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -565,7 +589,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.983870149, y: .17888394, z: 0}
     direction: {x: -.17888394, y: -.983870149, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -577,7 +601,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -1, y: -0, z: 0}
     direction: {x: 0, y: -1, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -589,7 +613,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.999362826, y: -.0356923826, z: 0}
     direction: {x: .0356923826, y: -.999362826, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -601,7 +625,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.999314845, y: -.0370113924, z: 0}
     direction: {x: .0370113924, y: -.999314845, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -613,7 +637,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.995893061, y: -.0905373022, z: 0}
     direction: {x: .0905373022, y: -.995893061, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -625,7 +649,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: -.707089901, y: -.707123637, z: 0}
     direction: {x: .707123637, y: -.707089901, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -637,7 +661,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: 0, y: -1, z: 0}
     direction: {x: 1, y: 0, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -649,7 +673,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .707089901, y: -.707123637, z: 0}
     direction: {x: .707123637, y: .707089901, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
@@ -661,7 +685,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .970153332, y: -.24249208, z: 0}
     direction: {x: .24249208, y: .970153332, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 0
     isStart: 1
   - parent: {fileID: 0}
@@ -673,7 +697,7 @@ MonoBehaviour:
       angle: 0
     normal: {x: .999132991, y: -.0416315086, z: 0}
     direction: {x: .0416315086, y: .999132991, z: 0}
-    flagNormalUpdate: 0
+    flagNormalUpdate: 1
     isEnd: 1
     isStart: 0
   isActive: 1
@@ -720,7 +744,7 @@ ParticleSystem:
   randomSeed: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 1
   InitialModule:
     enabled: 1

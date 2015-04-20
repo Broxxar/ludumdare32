@@ -14,6 +14,13 @@ public class PoliticianController : MonoBehaviour {
 	Vector3 moveTarget;
 	PoliticianState currentState;
 	
+	//animationVars
+	Animator _anim;
+	int cameraFlashHash = Animator.StringToHash("CameraFlash");
+	int isWalkingHash = Animator.StringToHash("IsWalking");
+	int stepRibbonHash = Animator.StringToHash("StepRibbon");
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -89,7 +96,21 @@ public class PoliticianController : MonoBehaviour {
 	IEnumerator RunRibbonEvent(){
 
 		//Run animation
+		//withdraw_scissors
+		//stepRibbonHash.
+		//maniac_laughter
 		currentState = PoliticianState.laughing;
+
+		//wait
+
+		//trigger stoping laughter
+
+		//running with scissor
+
+		//
+
+
+
 		//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 

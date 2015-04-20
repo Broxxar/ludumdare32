@@ -26,6 +26,7 @@ public static class PhotoEvalHelper {
 				return false;
 			}
 		}
+	//	Debug.Log ("CurrentState: " + state + "RequiredState: " + currentEvent.RequiredState);
 		if(state == currentEvent.RequiredState){
 			return true;
 		}
@@ -55,8 +56,9 @@ public static class PhotoEvalHelper {
 		float circleRadius = obj.radius;
 
 		//Debug.Log ("topLeft: "+topLeft+" bottom right:"+bottomRight+" centerCircle: " + circleCenter + " circleRadius: "+ circleRadius);
-
-		return ((circleCenter.x >= topLeft.x-circleRadius+RESRICTED_ALLOWANCE) && (circleCenter.x <= bottomRight.x + circleRadius-RESRICTED_ALLOWANCE) && (circleCenter.y <= topLeft.x+circleRadius-RESRICTED_ALLOWANCE)&&(circleCenter.y >= bottomRight.y-circleRadius+RESRICTED_ALLOWANCE));
+		bool inside = (circleCenter.x >= topLeft.x-circleRadius) && (circleCenter.x <= bottomRight.x + circleRadius) && (circleCenter.y <= topLeft.y+circleRadius)&&(circleCenter.y >= bottomRight.y-circleRadius);
+		//Debug.Log ("Was restricted in"+inside);
+		return inside;
 
 	}
 
