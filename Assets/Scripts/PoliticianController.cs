@@ -7,15 +7,18 @@ public enum PoliticianState{laughing, walking};
 public class PoliticianController : MonoBehaviour {
 
 	public WayPoint[] Route;//first, 
-	
+	public RibbonController ribbonController;
+
+
 	float moveSpeed = 1.0f;
 	int routeIndex=0;
 	bool performedEvent = false;
 	Vector3 moveTarget;
 	PoliticianState currentState;
+
 	
 	//animationVars
-	Animator _anim;
+	Animator anim;
 	int cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int isWalkingHash = Animator.StringToHash("IsWalking");
 	int stepRibbonHash = Animator.StringToHash("StepRibbon");
@@ -24,7 +27,8 @@ public class PoliticianController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		anim = GetComponent<Animator>();
+		anim.SetBool (isWalkingHash, true);
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
 		currentState = PoliticianState.walking;
@@ -32,7 +36,7 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 	void Update(){
-		if((Vector2)transform.position != (Vector2)Route[routeIndex].transform.position){
+		if((Vector2)transform.position != (Vector2)moveTarget){
 			UpdateMovement();
 		}else{
 			StoryEvents currentEvent = EventManager.Instance.currentEvent;
@@ -79,7 +83,7 @@ public class PoliticianController : MonoBehaviour {
 	}
 	
 	public void IncrementRouteIndex(){
-		if(routeIndex < Route.Length-1) {
+		if(routeIndex < Route.Length-1) { 
 			routeIndex++;
 			moveTarget = (Vector2)Route[routeIndex].transform.position;
 		}
@@ -95,27 +99,36 @@ public class PoliticianController : MonoBehaviour {
 	
 	IEnumerator RunRibbonEvent(){
 
-		//Run animation
+		//Run animations
+
 		//withdraw_scissors
-		//stepRibbonHash.
-		//maniac_laughter
+		anim.SetTrigger (stepRibbonHash);
+		yield return new WaitForSeconds (1.0f);
+		//maniac_laughter will start automatically
 		currentState = PoliticianState.laughing;
+		yield return new WaitForSeconds (2.0f);
+		currentState = PoliticianState.walking;
 
-		//wait
+		//triggerwalking towards ribbon
+		anim.SetTrigger (stepRibbonHash);
+		moveTarget = moveTarget + new Vector3 (0,1.5f,0);
+		while((Vector2)transform.position != (Vector2)moveTarget){
 
-		//trigger stoping laughter
-
-		//running with scissor
-
-		//
-
+			yield return null;
+		}
+		//trigger cut
+		anim.SetTrigger (stepRibbonHash);
+		yield return new WaitForSeconds (0.5f);
+		//ribbonController;
+		ribbonController.CutTheRibbon ();
 
 
 		//wait for it to end
-		yield return new WaitForSeconds (5.0f);
+		yield return new WaitForSeconds (1f);
 
-		currentState = PoliticianState.walking;
-		//Debug.Log ("event Over");
+
+		//walk away
+		anim.SetTrigger (stepRibbonHash);
 		EventEnds ();
 	}
 
