@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	public delegate void TakingPhoto();
-	public static event TakingPhoto OnTakePhoto;
+	public static event TakingPhoto OnTakePhoto = delegate { };
 
 	public float MoveSpeed;
 	public float ViewRotationStrength;
@@ -49,12 +49,10 @@ public class PlayerController : MonoBehaviour
 	
 	void TakePhoto ()
 	{
-		if (_canTakePicture) {
+		if (_canTakePicture)
+		{
 			StartCoroutine (TakePhotoAsync ());
-			if(OnTakePhoto != null){
 			OnTakePhoto();
-
-			}
 		}
 	}
 	
@@ -72,18 +70,23 @@ public class PlayerController : MonoBehaviour
 
 		//Evaluate Photo
 		bool isPhotoGood = false;
-		StoryEvents currentEvent = EventManager.Instance.currentEvent;
-		
-		foreach(EventWayPoint wp in EventManager.Instance.eventWPs)
+		if (EventManager.Instance != null)
 		{
-			if(wp != null && wp.ThisEvent == currentEvent){
-				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
+			StoryEvents currentEvent = EventManager.Instance.currentEvent;
+			
+			foreach(EventWayPoint wp in EventManager.Instance.eventWPs)
+			{
+				if(wp != null && wp.ThisEvent == currentEvent){
+					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
+				}
 			}
+			
+			Debug.Log (isPhotoGood);
 		}
-		Debug.Log (isPhotoGood);
+
 		yield return new WaitForSeconds(0.45f);
-		// Post Photo
 		
+		// Post Photo
 		_canTakePicture = true;
 	}
 	
