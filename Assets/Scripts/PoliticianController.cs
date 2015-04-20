@@ -6,10 +6,12 @@ public enum PoliticianState{laughing, walking};
 
 public class PoliticianController : MonoBehaviour {
 
-	private float moveSpeed = 3.0f;
 	public WayPoint[] Route;//first, 
+	
+	float moveSpeed = 1.0f;
 	int routeIndex=0;
 	bool performedEvent = false;
+	Vector3 moveTarget;
 	PoliticianState currentState;
 	
 
@@ -19,13 +21,12 @@ public class PoliticianController : MonoBehaviour {
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
 		currentState = PoliticianState.walking;
-
+		moveTarget = (Vector2)Route[routeIndex].transform.position;
 	}
 
 	void Update(){
-		if(transform.position != Route[routeIndex].transform.position){
-
-			transform.position = Vector3.MoveTowards (transform.position, Route[routeIndex].transform.position, Time.deltaTime * moveSpeed);
+		if((Vector2)transform.position != (Vector2)Route[routeIndex].transform.position){
+			UpdateMovement();
 		}else{
 			StoryEvents currentEvent = EventManager.Instance.currentEvent;
 			if(currentEvent == StoryEvents.RibbonCutting){
@@ -53,9 +54,11 @@ public class PoliticianController : MonoBehaviour {
 					StartCoroutine(RunLudeActsEvent());
 				}
 			}
-
-
 		}
+	}
+	
+	void UpdateMovement () {
+		transform.position = Vector2.MoveTowards (transform.position, moveTarget, Time.deltaTime * moveSpeed);
 	}
 
 	void EventEnds(){
@@ -69,8 +72,10 @@ public class PoliticianController : MonoBehaviour {
 	}
 	
 	public void IncrementRouteIndex(){
-		if(routeIndex < Route.Length-1)
+		if(routeIndex < Route.Length-1) {
 			routeIndex++;
+			moveTarget = (Vector2)Route[routeIndex].transform.position;
+		}
 	}
 
 

@@ -1692,7 +1692,7 @@ Transform:
   m_PrefabInternal: {fileID: 602675826}
   m_GameObject: {fileID: 227296823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.1000004, y: 8.47999954, z: 8.47999954}
+  m_LocalPosition: {x: 36.9599991, y: 13.8500004, z: 13.8500004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123974588}
@@ -6088,15 +6088,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 443788, guid: ea85d126d836ec64083335c452fb5941, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.1000004
+      value: 36.9599991
       objectReference: {fileID: 0}
     - target: {fileID: 443788, guid: ea85d126d836ec64083335c452fb5941, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.47999954
+      value: 13.8500004
       objectReference: {fileID: 0}
     - target: {fileID: 443788, guid: ea85d126d836ec64083335c452fb5941, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 8.47999954
+      value: 13.8500004
       objectReference: {fileID: 0}
     - target: {fileID: 443788, guid: ea85d126d836ec64083335c452fb5941, type: 2}
       propertyPath: m_LocalRotation.x
@@ -15752,6 +15752,7 @@ MonoBehaviour:
   - {fileID: 0}
   EventRestrictedItems: []
   RequiredState: 0
+  HasFinished: 0
 --- !u!58 &1386096532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19255,6 +19256,7 @@ MonoBehaviour:
   - {fileID: 0}
   EventRestrictedItems: []
   RequiredState: 0
+  HasFinished: 0
 --- !u!58 &1753577312
 CircleCollider2D:
   m_ObjectHideFlags: 0
