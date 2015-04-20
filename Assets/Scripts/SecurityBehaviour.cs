@@ -11,7 +11,8 @@ public class SecurityBehaviour : CharacterBehaviour {
 	//radius where security gaurds 
 	public Vector3 guardOffset = new Vector3(1,1,0);
 
-	public bool aggressive = false;
+	private bool aggressive = false;
+	private bool inFov = false;
 
 	private Vector3 poliPositionLast;
 	private Vector3 poliPositionCurrent;
@@ -50,7 +51,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 		_idling = false;
 
 		//attack journalist
-		if (aggressive) {
+		if (aggressive && inFov) {
 			Move (photographer.transform.position);
 			UpdateView(photographer.transform.position - transform.position);
 
@@ -76,21 +77,36 @@ public class SecurityBehaviour : CharacterBehaviour {
 			_anim.SetBool(_isWalkingHash, !_idling);
 		}
 
-		_anim.SetBool(roughing, aggressive);
+		_anim.SetBool(roughing, aggressive && inFov);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag("Player")) {
-			aggressive = true;
+			inFov = true;
 			//dosomething to the player
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		if (other.CompareTag("Player")) {
+			inFov = false;
 			aggressive = false;
 		}
 	}
+
+	void OnEnable(){
+		PlayerController.OnTakePhoto += tookPhoto;
+	}
+
+	void OnDisable(){
+		PlayerController.OnTakePhoto -= tookPhoto;
+	}
+
+	void tookPhoto(){
+		aggressive = true;
+	}
+
+
 
 	Vector3 getGuardPosition(){
 		return politician.transform.position + guardOffset;

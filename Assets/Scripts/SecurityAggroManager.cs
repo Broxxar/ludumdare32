@@ -16,14 +16,14 @@ public class SecurityAggroManager : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		
 		if (other.CompareTag("Player")) {
-			transform.parent.GetComponentInParent<SecurityBehaviour>().aggressive = true;
+			//transform.parent.GetComponentInParent<SecurityBehaviour>().aggressive = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		
 		if (other.CompareTag("Player")) {
-			transform.parent.GetComponentInParent<SecurityBehaviour>().aggressive = false;
+			//transform.parent.GetComponentInParent<SecurityBehaviour>().aggressive = false;
 		}
 	}
 

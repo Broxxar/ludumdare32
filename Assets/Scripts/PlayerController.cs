@@ -3,9 +3,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+	public delegate void TakingPhoto();
+	public static event TakingPhoto OnTakePhoto;
+
 	public float MoveSpeed;
 	public float ViewRotationStrength;
-
 
 	Animator _anim;
 	Transform _view;
@@ -43,8 +45,10 @@ public class PlayerController : MonoBehaviour
 	
 	void TakePhoto ()
 	{
-		if (_canTakePicture)
-			StartCoroutine(TakePhotoAsync());
+		if (_canTakePicture) {
+			StartCoroutine (TakePhotoAsync ());
+			OnTakePhoto();
+		}
 	}
 	
 	IEnumerator TakePhotoAsync ()
