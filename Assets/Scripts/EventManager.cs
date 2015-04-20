@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public enum StoryEvents{RibbonCutting, HotDog, StealCandy, LudeActs, movingBetween}
+public enum StoryEvents{RibbonCutting, HotDog, StealCandy, HotDogOver, movingBetween}
 public delegate void OnEventChangeHandler();
 
 public class EventManager : MonoBehaviour{

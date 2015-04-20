@@ -2,7 +2,7 @@
 using System.Collections;
 	
 	
-public enum PoliticianState{laughing, walking, hurtDog};
+public enum PoliticianState{laughing, walking, hurtDog, holdingCandy, givingCandy, done};
 
 public class PoliticianController : MonoBehaviour {
 
@@ -10,6 +10,7 @@ public class PoliticianController : MonoBehaviour {
 	public RibbonController ribbonController;
 	public Vector3 moveTarget;
 	public PoliticianState currentState;
+	public MomController mom;
 
 
 	float moveSpeed = 1.0f;
@@ -23,6 +24,7 @@ public class PoliticianController : MonoBehaviour {
 	int isWalkingHash = Animator.StringToHash("IsWalking");
 	int stepRibbonHash = Animator.StringToHash("StepRibbon");
 	int roughUpHash = Animator.StringToHash("IsRough");
+	int stepCandyHash = Animator.StringToHash("StepCandy");
 
 
 
@@ -37,17 +39,19 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 	void Update(){
+
 		StoryEvents currentEvent = EventManager.Instance.currentEvent;
 		if((Vector2)transform.position != (Vector2)moveTarget){
 
 			if(currentEvent == StoryEvents.HotDog){
 				anim.SetBool(roughUpHash, true);
-
+			}
+			if(currentEvent == StoryEvents.StealCandy && currentState != PoliticianState.holdingCandy && !mom.givenNewCandy){
+				StartCoroutine(StartRunningWithCandy());
+				
 			}
 			UpdateMovement();
 		}else{
-
-		
 			if(currentEvent == StoryEvents.RibbonCutting){
 				if(!performedEvent){
 					performedEvent = true;
@@ -58,20 +62,13 @@ public class PoliticianController : MonoBehaviour {
 
 				if(!performedEvent){
 					performedEvent = true;
-					moveSpeed = 3f;
 					StartCoroutine(RunHotDogEvent());
 				}
 			}else if(currentEvent == StoryEvents.StealCandy){
 				if(!performedEvent){
 					performedEvent = true;
 				//	Debug.Log ("That bitch stole some candy");
-					StartCoroutine(RunStealCandyEvent());
-				}
-			}else if(currentEvent == StoryEvents.LudeActs){
-				if(!performedEvent){
-					performedEvent = true;
-				//	Debug.Log ("OH MY!");
-					StartCoroutine(RunLudeActsEvent());
+					StartCoroutine(StealCandyEvent());
 				}
 			}
 		}
@@ -100,11 +97,19 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 
-
 	void HandleOnEventChange ()
 	{
 		performedEvent = false;
 
+	}
+
+	IEnumerator StartRunningWithCandy(){
+		currentState = PoliticianState.holdingCandy;
+		yield return new WaitForSeconds(1);
+		anim.SetTrigger (stepCandyHash);
+
+		yield return new WaitForSeconds(1);
+		anim.SetTrigger(stepCandyHash);
 	}
 	
 	IEnumerator RunRibbonEvent(){
@@ -143,44 +148,34 @@ public class PoliticianController : MonoBehaviour {
 	}
 
 	IEnumerator RunHotDogEvent(){
-		//Debug.Log ("Hotdogscoroutine started");
-		//Run animation
-
-		//startDogs 
-		//anim.SetBool (roughUpHash, true);
-		//currentState = PoliticianState.hurtDog;
-
+	
 		//wait for it to end
 		yield return new WaitForSeconds (2.0f);
 		currentState = PoliticianState.walking;
 		anim.SetBool (roughUpHash, false);
-		moveSpeed = 3;
+
 
 		//Debug.Log ("event Over");
+		EventManager.Instance.SetEventState (StoryEvents.HotDogOver);
+
 		EventEnds ();
+
 	}
 
-	IEnumerator RunStealCandyEvent(){
-		//Run animation
-			//wait for it to end
-		yield return new WaitForSeconds (5.0f);
-		
-
-	//	Debug.Log ("event Over");
-		EventEnds ();
-	}
-	IEnumerator RunLudeActsEvent(){
-
+	IEnumerator StealCandyEvent(){
 		//Run animation
 		//wait for it to end
-		yield return new WaitForSeconds (5.0f);
-		
-	
+		yield return new WaitForSeconds (.50f);
+		currentState = PoliticianState.givingCandy;
+		anim.SetTrigger (stepCandyHash);
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+		yield return new WaitForSeconds (2.0f);
+		anim.SetTrigger (stepCandyHash);
+	//	Route[routeIndex].GetComponent<EventWayPoint>().HasFinished = true;
 	//	Debug.Log ("event Over");
 		EventEnds ();
-
-
 	}
+
 
 	public PoliticianState GetState(){
 		return currentState;
