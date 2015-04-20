@@ -84,6 +84,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag("Player")) {
 			inFov = true;
+			//Debug.Log("In FOV");
 			//dosomething to the player
 		}
 	}

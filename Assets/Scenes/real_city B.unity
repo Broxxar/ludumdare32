@@ -3221,7 +3221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -5840,7 +5839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1.20000005
   ChanceToIdle: 0
@@ -19282,7 +19280,7 @@ MonoBehaviour:
     direction: {x: 0, y: 1, z: 0}
     flagNormalUpdate: 0
     isEnd: 0
-    isStart: 0
+    isStart: 1
   - parent: {fileID: 0}
     pointA:
       position: {x: 17.9150009, y: 8.52499962, z: 6}
@@ -19293,7 +19291,7 @@ MonoBehaviour:
     normal: {x: .995495439, y: .0948094353, z: 0}
     direction: {x: -.0948094353, y: .995495439, z: 0}
     flagNormalUpdate: 0
-    isEnd: 0
+    isEnd: 1
     isStart: 0
   - parent: {fileID: 0}
     pointA:
@@ -19354,7 +19352,7 @@ MonoBehaviour:
     direction: {x: -.0856216624, y: -.996327758, z: 0}
     flagNormalUpdate: 0
     isEnd: 0
-    isStart: 1
+    isStart: 0
   - parent: {fileID: 0}
     pointA:
       position: {x: 14.085, y: 8.47500038, z: 6}
@@ -19449,8 +19447,8 @@ MonoBehaviour:
     normal: {x: 0, y: -1, z: 0}
     direction: {x: 1, y: 0, z: 0}
     flagNormalUpdate: 0
-    isEnd: 1
-    isStart: 0
+    isEnd: 0
+    isStart: 1
   - parent: {fileID: 0}
     pointA:
       position: {x: 17.7749996, y: 2.16499996, z: 6}
@@ -20697,7 +20695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1.20000005
   ChanceToIdle: 0
@@ -27577,6 +27574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   ViewRotationStrength: 10
+  Stunned: 0
 --- !u!58 &2095148449
 CircleCollider2D:
   m_ObjectHideFlags: 0

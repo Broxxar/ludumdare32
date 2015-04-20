@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
 
 		//Evaluate Photo
 		bool isPhotoGood = false;
+		bool isPhotoValid = false;
+
 		if (EventManager.Instance != null)
 		{
 			StoryEvents currentEvent = EventManager.Instance.currentEvent;
@@ -84,28 +86,37 @@ public class PlayerController : MonoBehaviour
 			foreach(EventWayPoint wp in EventManager.Instance.eventWPs)
 			{
 				if(wp != null && wp.ThisEvent == currentEvent){
-					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
+
+					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider, wp, _politician.GetState());
+					isPhotoValid = PhotoEvalHelper.ValidatePhoto(_photoCollider, wp);
+
+					if (isPhotoValid)
+					{
+					
+						PhotoInfo newPhotoInfo = new PhotoInfo
+						{
+							PhotoSprite = photoSprite,
+							AssociatedEvent = currentEvent,
+							Successful = isPhotoGood
+						};
+
+						if (SavedPhotos.ContainsKey(currentEvent))
+						{
+							if (newPhotoInfo.Successful && !SavedPhotos[currentEvent].Successful)
+								SavedPhotos[currentEvent] = newPhotoInfo;
+						}
+						else
+						{
+							SavedPhotos.Add(currentEvent, newPhotoInfo);
+						}
+						
+					}
+
+					Debug.Log ("Good: " + isPhotoGood);
+					Debug.Log ("Valid: " + isPhotoValid);
+
 				}
 			}
-			
-			PhotoInfo newPhotoInfo = new PhotoInfo
-			{
-				PhotoSprite = photoSprite,
-				AssociatedEvent = currentEvent,
-				Successful = isPhotoGood
-			};
-			
-			if (SavedPhotos.ContainsKey(currentEvent))
-			{
-				if (newPhotoInfo.Successful && !SavedPhotos[currentEvent].Successful)
-					SavedPhotos[currentEvent] = newPhotoInfo;
-			}
-			else
-			{
-				SavedPhotos.Add(currentEvent, newPhotoInfo);
-			}
-			
-			Debug.Log (isPhotoGood);
 		}
 
 		yield return new WaitForSeconds(0.45f);
