@@ -21784,6 +21784,7 @@ MonoBehaviour:
   MoveSpeed: 3
   ViewRotationStrength: 10
   Stunned: 0
+  Frozen: 0
 --- !u!58 &1293181364
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23695,6 +23696,7 @@ MonoBehaviour:
   eventWPs:
   - {fileID: 1386096531}
   - {fileID: 1753577311}
+  - {fileID: 1768721277}
 --- !u!1 &1438055102
 GameObject:
   m_ObjectHideFlags: 0
