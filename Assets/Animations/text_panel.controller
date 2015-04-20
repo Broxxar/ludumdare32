@@ -5,17 +5,11 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: polaroid
+  m_Name: text_panel
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: Despawn
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Spawn
-    m_Type: 9
+  - m_Name: IsVisible
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -23,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110785578}
+    m_StateMachine: {fileID: 110767640}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -32,62 +26,67 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110105788
+--- !u!1101 &110115200
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110292818}
-  m_DstState: {fileID: 110285578}
+  m_SrcState: {fileID: 110269964}
+  m_DstState: {fileID: 110267640}
+  m_TransitionDuration: .75
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsVisible
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110153300
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110267640}
+  m_DstState: {fileID: 110269964}
+  m_TransitionDuration: .75
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsVisible
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110154644
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110203286}
+  m_DstState: {fileID: 110267640}
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Spawn
+    m_ConditionEvent: IsVisible
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110169760
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110285578}
-  m_DstState: {fileID: 110297040}
-  m_TransitionDuration: .375
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Despawn
-    m_EventTreshold: 0
-    m_ExitTime: .625
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1102 &110285578
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: polaroid_spawn
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 79f815a62bcc61946a3c03fad4c444d8, type: 2}
-  m_ParentStateMachine: {fileID: 110785578}
-  m_Position: {x: 48, y: 72, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1102 &110292818
+--- !u!1102 &110203286
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -97,52 +96,68 @@ State:
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 0}
-  m_ParentStateMachine: {fileID: 110785578}
-  m_Position: {x: -204, y: 72, z: 0}
+  m_ParentStateMachine: {fileID: 110767640}
+  m_Position: {x: -228, y: 108, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110297040
+--- !u!1102 &110267640
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: polaroid_despawn
+  m_Name: show_text
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 44e64c326cf85264b98777b901a74dce, type: 2}
-  m_ParentStateMachine: {fileID: 110785578}
-  m_Position: {x: 48, y: 192, z: 0}
+  - {fileID: 7400000, guid: 9bee71989040b03428361e0789da35d7, type: 2}
+  m_ParentStateMachine: {fileID: 110767640}
+  m_Position: {x: 48, y: 108, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110785578
+--- !u!1102 &110269964
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: hide_text
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 667f631972e24e14ca454ab2d4eaa87d, type: 2}
+  m_ParentStateMachine: {fileID: 110767640}
+  m_Position: {x: 48, y: 228, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1107 &110767640
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110292818}
+  m_DefaultState: {fileID: 110203286}
   m_States:
-  - {fileID: 110285578}
-  - {fileID: 110297040}
-  - {fileID: 110292818}
+  - {fileID: 110267640}
+  - {fileID: 110269964}
+  - {fileID: 110203286}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110292818}
+      first: {fileID: 110203286}
       second:
-      - {fileID: 110105788}
+      - {fileID: 110154644}
     data:
-      first: {fileID: 110297040}
-      second: []
-    data:
-      first: {fileID: 110285578}
+      first: {fileID: 110269964}
       second:
-      - {fileID: 110169760}
+      - {fileID: 110115200}
+    data:
+      first: {fileID: 110267640}
+      second:
+      - {fileID: 110153300}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
