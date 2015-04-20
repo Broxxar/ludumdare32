@@ -2,7 +2,7 @@
 using System.Collections;
 	
 	
-public enum PoliticianState{laughing, idle};
+public enum PoliticianState{laughing, walking};
 
 public class PoliticianController : MonoBehaviour {
 
@@ -18,7 +18,7 @@ public class PoliticianController : MonoBehaviour {
 
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		currentState = PoliticianState.idle;
+		currentState = PoliticianState.walking;
 
 	}
 
@@ -54,9 +54,20 @@ public class PoliticianController : MonoBehaviour {
 				}
 			}
 
+
 		}
 	}
 
+	void EventEnds(){
+		//after event ends send him on his way
+		EventWayPoint eventWP =Route[routeIndex].GetComponent<EventWayPoint>();
+		if(eventWP != null){
+			eventWP.HasFinished = true;
+		}
+		IncrementRouteIndex();
+		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+	}
+	
 	public void IncrementRouteIndex(){
 		if(routeIndex < Route.Length-1)
 			routeIndex++;
@@ -77,12 +88,9 @@ public class PoliticianController : MonoBehaviour {
 		//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 
-		//after event ends send him on his way
-		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
-		currentState = PoliticianState.idle;
+		currentState = PoliticianState.walking;
 		//Debug.Log ("event Over");
-
+		EventEnds ();
 	}
 
 	IEnumerator RunHotDogEvent(){
@@ -91,10 +99,9 @@ public class PoliticianController : MonoBehaviour {
 			//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 		
-		//after event ends send him on his way
-		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+
 		//Debug.Log ("event Over");
+		EventEnds ();
 	}
 
 	IEnumerator RunStealCandyEvent(){
@@ -102,10 +109,9 @@ public class PoliticianController : MonoBehaviour {
 			//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 		
-		//after event ends send him on his way
-		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+
 	//	Debug.Log ("event Over");
+		EventEnds ();
 	}
 	IEnumerator RunLudeActsEvent(){
 
@@ -113,10 +119,9 @@ public class PoliticianController : MonoBehaviour {
 		//wait for it to end
 		yield return new WaitForSeconds (5.0f);
 		
-		//after event ends send him on his way
-		IncrementRouteIndex();
-		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
+	
 	//	Debug.Log ("event Over");
+		EventEnds ();
 
 
 	}
