@@ -8,13 +8,13 @@ public class PoliticianController : MonoBehaviour {
 
 	public WayPoint[] Route;//first, 
 	public RibbonController ribbonController;
+	public Vector3 moveTarget;
+	public PoliticianState currentState;
 
 
 	float moveSpeed = 1.0f;
 	int routeIndex=0;
 	bool performedEvent = false;
-	Vector3 moveTarget;
-	PoliticianState currentState;
 
 	
 	//animationVars
@@ -39,9 +39,10 @@ public class PoliticianController : MonoBehaviour {
 	void Update(){
 		StoryEvents currentEvent = EventManager.Instance.currentEvent;
 		if((Vector2)transform.position != (Vector2)moveTarget){
+
 			if(currentEvent == StoryEvents.HotDog){
 				anim.SetBool(roughUpHash, true);
-				currentState = PoliticianState.hurtDog;
+
 			}
 			UpdateMovement();
 		}else{

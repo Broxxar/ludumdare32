@@ -51,7 +51,10 @@ public class PlayerController : MonoBehaviour
 	{
 		if (_canTakePicture) {
 			StartCoroutine (TakePhotoAsync ());
+			if(OnTakePhoto != null){
 			OnTakePhoto();
+
+			}
 		}
 	}
 	

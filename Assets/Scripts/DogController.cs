@@ -16,12 +16,15 @@ public class DogController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.GetComponent<PoliticianController>() != null){
+			other.GetComponent<PoliticianController>().currentState = PoliticianState.hurtDog;
 			HotDogGuy.finishedBeingAttacked = true;
+			other.GetComponent<PoliticianController>().moveTarget = transform.position+ new Vector3(-1f, -1f, 0);
 		}
-		Debug.Log (other.name);
+
 	}
 
 	public void TriggerDogAttack(){
+	
 		StartCoroutine (DogAttackAnim());
 
 	}
@@ -30,11 +33,12 @@ public class DogController : MonoBehaviour {
 		//run to hot dog guy
 		_anim.SetTrigger(_stepHash);
 		if(HotDogGuy!= null){
-		Vector3 target = HotDogGuy.transform.position + new Vector3(.2f, -.1f, 0);
+		Vector3 target = HotDogGuy.transform.position + new Vector3(.4f, -.1f, 0);
 			while((Vector2)transform.position != (Vector2)target){
 				Move((Vector2)target);
 				yield return null;
 			}
+			EventManager.Instance.SetEventState (StoryEvents.HotDog);
 			while(!HotDogGuy.finishedBeingAttacked){
 				yield return null;
 			}
