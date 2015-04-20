@@ -43,9 +43,13 @@ public class CharacterBehaviour : MonoBehaviour
 		if ((Vector2)transform.position == (Vector2)_currentMoveTarget) {	
 			_previousWP = CurrentWP;
 			CurrentWP = CurrentWP.neighbours
-				.Where(wp => wp != _previousWP || CurrentWP.neighbours.Count == 1)
+				.Where(wp => (wp != _previousWP || CurrentWP.neighbours.Count == 1) && wp != null)
 				.OrderBy(wp => Random.Range(0f, 1f))
-				.First();
+				.FirstOrDefault();
+				
+			if (CurrentWP == null)
+				CurrentWP = _previousWP;
+				
 			GetNewMoveTarget(CurrentWP);
 			
 			if (Random.Range(0f, 1f) < ChanceToIdle)
