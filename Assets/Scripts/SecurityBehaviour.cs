@@ -71,7 +71,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 
 			if(myPositionLast == myPositionCurrent && poliPositionCurrent == poliPositionLast){
 				_idling = true;
-				UpdateView (transform.position - poliPositionCurrent);
+				UpdateView ((Vector2)(transform.position - poliPositionCurrent));
 			}
 		
 
