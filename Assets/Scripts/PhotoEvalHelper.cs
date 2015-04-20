@@ -34,6 +34,12 @@ public static class PhotoEvalHelper {
 		return false;
 	}
 
+	//check area where photo is taken
+	public static bool ValidatePhoto(Collider2D photoArea, EventWayPoint currentEvent){
+
+		return (Vector2.Distance (photoArea.transform.position, currentEvent.transform.position) < 4);
+	}
+
 	static bool RequiredObjectContained(Collider2D photoArea, Collider2D obj){
 	
 		//check without Z

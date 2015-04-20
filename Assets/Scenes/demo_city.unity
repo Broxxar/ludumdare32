@@ -647,7 +647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -1408,6 +1407,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   ribbonController: {fileID: 0}
+  moveTarget: {x: 0, y: 0, z: 0}
+  currentState: 0
 --- !u!50 &223951601
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2086,7 +2087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -2197,7 +2197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -2563,7 +2562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -2914,7 +2912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -3330,7 +3327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -3507,7 +3503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -4292,6 +4287,8 @@ GameObject:
   - 4: {fileID: 644930605}
   - 114: {fileID: 644930607}
   - 95: {fileID: 644930606}
+  - 114: {fileID: 644930609}
+  - 58: {fileID: 644930608}
   m_Layer: 0
   m_Name: doge
   m_TagString: Untagged
@@ -4307,7 +4304,7 @@ Transform:
   m_GameObject: {fileID: 644930604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.639999986, y: 3.4000001, z: 3.4000001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1178747425}
   m_Father: {fileID: 0}
@@ -4341,6 +4338,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsStatic: 0
+--- !u!58 &644930608
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 21027f630010cd641a7d10766065f9d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 17390900}
+  m_GameObject: {fileID: 644930604}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .300000012
+  m_Center: {x: 0, y: .300000012}
+--- !u!114 &644930609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 21027f630010cd641a7d10766065f9d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 17390900}
+  m_GameObject: {fileID: 644930604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a9913d710ff5843841589ce2c38dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HotDogGuy: {fileID: 0}
 --- !u!1 &648808397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,7 +4505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -5829,7 +5850,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -9990,6 +10010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   ViewRotationStrength: 10
+  Stunned: 0
 --- !u!50 &1241497563
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -11517,7 +11538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -12406,6 +12426,7 @@ GameObject:
   - 4: {fileID: 1624830566}
   - 212: {fileID: 1624830568}
   - 114: {fileID: 1624830567}
+  - 58: {fileID: 1624830569}
   m_Layer: 0
   m_Name: hot_dog_cart
   m_TagString: Untagged
@@ -12462,6 +12483,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 47447eee0a8a32f4eab3e9cd0488f328, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1624830569
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 19acc7a2ebb4e2346aa280af2f41c237,
+    type: 2}
+  m_PrefabInternal: {fileID: 1769570744}
+  m_GameObject: {fileID: 1624830565}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .75999999
+  m_Center: {x: -.114285588, y: .647618771}
 --- !u!1 &1628067949
 GameObject:
   m_ObjectHideFlags: 0
@@ -13773,7 +13806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
@@ -16231,7 +16263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
-  DestinationWP: {fileID: 0}
   EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994

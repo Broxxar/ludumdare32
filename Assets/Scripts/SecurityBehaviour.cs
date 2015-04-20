@@ -84,6 +84,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag("Player")) {
 			inFov = true;
+			//Debug.Log("In FOV");
 			//dosomething to the player
 		}
 	}
@@ -92,6 +93,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 		if (other.CompareTag("Player")) {
 			inFov = false;
 			aggressive = false;
+			_anim.SetBool(roughing, false);
 		}
 	}
 
@@ -104,7 +106,9 @@ public class SecurityBehaviour : CharacterBehaviour {
 	}
 
 	void tookPhoto(){
-		aggressive = true;
+		if (inFov) {
+			aggressive = true;
+		}
 	}
 
 	IEnumerator stunJournalist(float duration){
