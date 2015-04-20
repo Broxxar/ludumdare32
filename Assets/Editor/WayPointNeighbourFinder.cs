@@ -10,42 +10,39 @@ public class MenuItems
 	{
 		WayPoint[] allWayPoints = GameObject.FindObjectsOfType<WayPoint> ();
 
-		Debug.Log ("entered function");
+		Debug.Log (allWayPoints.Length);
 
-		foreach (WayPoint wp in allWayPoints) {
-
-			wp.neighbours.Clear();
-
-			Collider2D[] candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position + Vector2.up*4);
-
-			foreach (Collider2D candidate in candidates){
-				if (candidate.GetComponent<WayPoint>() != null){
-					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
-				}
+		foreach (WayPoint tazdingo in allWayPoints) {
+			if(tazdingo.GetType() == typeof(EventWayPoint)){
+				Debug.Log ("event");
+				continue;
 			}
+			tazdingo.neighbours.Clear();
 
-			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position + Vector2.right*4);
-			foreach (Collider2D candidate in candidates){
-				if (candidate.GetComponent<WayPoint>() != null){
-					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
-				}
+			Collider2D[] candidates = Physics2D.OverlapPointAll((Vector2)tazdingo.transform.position + Vector2.up*4);
+			CheckAndSetNeighbor(candidates, tazdingo);
+
+
+			candidates = Physics2D.OverlapPointAll((Vector2)tazdingo.transform.position + Vector2.right*4);
+			CheckAndSetNeighbor(candidates, tazdingo);
+
+			candidates = Physics2D.OverlapPointAll((Vector2)tazdingo.transform.position - Vector2.up*4);
+			CheckAndSetNeighbor(candidates, tazdingo);
+
+			candidates = Physics2D.OverlapPointAll((Vector2)tazdingo.transform.position - Vector2.right*4);
+			CheckAndSetNeighbor(candidates, tazdingo);
+
+			EditorUtility.SetDirty(tazdingo);
+		}
+	}
+
+	public static void CheckAndSetNeighbor(Collider2D[] candidates, WayPoint wp){
+		
+		foreach (Collider2D candidate in candidates){
+			if (candidate.GetComponent<WayPoint>() != null){
+				wp.neighbours.Add(candidate.GetComponent<WayPoint>());
+
 			}
-
-			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position - Vector2.up*4);
-			foreach (Collider2D candidate in candidates){
-				if (candidate.GetComponent<WayPoint>() != null){
-					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
-				}
-			}
-
-			candidates = Physics2D.OverlapPointAll((Vector2)wp.transform.position - Vector2.right*4);
-			foreach (Collider2D candidate in candidates){
-				if (candidate.GetComponent<WayPoint>() != null){
-					wp.neighbours.Add(candidate.GetComponent<WayPoint>());
-				}
-			}
-
-			EditorUtility.SetDirty(wp);
 		}
 	}
 }
