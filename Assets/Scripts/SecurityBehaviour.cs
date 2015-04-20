@@ -16,6 +16,9 @@ public class SecurityBehaviour : CharacterBehaviour {
 	private Vector3 poliPositionLast;
 	private Vector3 poliPositionCurrent;
 
+	private Vector3 myPositionLast;
+	private Vector3 myPositionCurrent;
+
 	private int roughing = Animator.StringToHash("IsRough");
 
 	Transform _view;
@@ -41,17 +44,20 @@ public class SecurityBehaviour : CharacterBehaviour {
 		poliPositionLast = poliPositionCurrent;
 		poliPositionCurrent = politician.transform.position;
 
-		_anim.SetBool(roughing, aggressive);
+		myPositionLast = myPositionCurrent;
+		myPositionCurrent = this.transform.position;
 
+		_idling = false;
+
+		//attack journalist
 		if (aggressive) {
 			Move (photographer.transform.position);
 			UpdateView(photographer.transform.position - transform.position);
 
-
 		} else {
 
 			Move (getGuardPosition ());
-			_anim.SetBool(_isWalkingHash, !_idling);
+
 
 			// follow politician when moving
 			if (poliPositionCurrent != poliPositionLast) {
@@ -63,14 +69,18 @@ public class SecurityBehaviour : CharacterBehaviour {
 			// if stationary, do some scanning
 			else {
 				UpdateView (transform.position - poliPositionCurrent);
-				_idling = true;
+				if(myPositionLast == myPositionCurrent)
+					_idling = true;
 			}
+
+			_anim.SetBool(_isWalkingHash, !_idling);
 		}
+
+		_anim.SetBool(roughing, aggressive);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag("Player")) {
-			Debug.Log ("On trigger enter journalist");
 			aggressive = true;
 			//dosomething to the player
 		}
@@ -78,7 +88,6 @@ public class SecurityBehaviour : CharacterBehaviour {
 
 	void OnTriggerExit2D(Collider2D other){
 		if (other.CompareTag("Player")) {
-			Debug.Log ("On trigger exit journalist");
 			aggressive = false;
 		}
 	}
