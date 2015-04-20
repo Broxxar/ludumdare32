@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 		
 		foreach(EventWayPoint wp in EventManager.Instance.eventWPs)
 		{
-			if(wp.ThisEvent == currentEvent){
+			if(wp != null && wp.ThisEvent == currentEvent){
 				isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider,wp, _politician.GetState());
 			}
 		}

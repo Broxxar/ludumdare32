@@ -11,7 +11,7 @@ public static class PhotoEvalHelper {
 		int numfoundObjects = 0;
 		foreach (Collider2D coll in currentEvent.EventRequiredItems){
 
-			if(RequiredObjectContained(photoArea, coll)){
+			if(coll != null && RequiredObjectContained(photoArea, coll)){
 				numfoundObjects ++;
 			}
 		}
@@ -22,7 +22,7 @@ public static class PhotoEvalHelper {
 		}
 
 		foreach(CircleCollider2D obj in currentEvent.EventRestrictedItems){
-			if(RestrictedObjectContained(photoArea, obj)){
+			if(obj != null && RestrictedObjectContained(photoArea, obj)){
 				return false;
 			}
 		}
