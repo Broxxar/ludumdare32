@@ -34,6 +34,14 @@ TextureImporter:
     21300058: doge_lower_head
     21300060: hot_dog_cart
     21300062: fire_hydrant
+    21300064: citizen_4_head_concerned
+    21300066: stroller
+    21300068: babby
+    21300070: lolly
+    21300072: babby_cry
+    21300074: stroller_wheel
+    21300076: exclaim_point
+    21300080: babby_arm
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -374,6 +382,86 @@ TextureImporter:
         height: 97
       alignment: 9
       pivot: {x: .489921927, y: .153084725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: citizen_4_head_concerned
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 307
+        width: 90
+        height: 104
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stroller
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 351
+        width: 121
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: babby
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 159
+        width: 45
+        height: 45
+      alignment: 9
+      pivot: {x: .5, y: .0500000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lolly
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 156
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: babby_cry
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 111
+        width: 45
+        height: 44
+      alignment: 9
+      pivot: {x: .5, y: .0500000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stroller_wheel
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 114
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: babby_arm
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 157
+        width: 17
+        height: 33
+      alignment: 9
+      pivot: {x: .415398091, y: .0772455409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: exclaim_point
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 227
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
