@@ -52,32 +52,33 @@ public class SecurityBehaviour : CharacterBehaviour {
 
 		//attack journalist
 		if (aggressive && inFov) {
+
+			_anim.SetBool(roughing, true);
+
 			Move (photographer.transform.position);
 			UpdateView(photographer.transform.position - transform.position);
+
+			if (Vector2.Distance(this.transform.position, photographer.transform.position) < 0.2){
+
+				StartCoroutine( stunJournalist (3.0f));
+				aggressive = false;
+			}
 
 		} else {
 
 			Move (getGuardPosition ());
+			UpdateView (poliPositionCurrent - transform.position);
 
-
-			// follow politician when moving
-			if (poliPositionCurrent != poliPositionLast) {
-
-				// look at direction of movement
-				UpdateView (poliPositionCurrent - transform.position);
-			}
-
-			// if stationary, do some scanning
-			else {
+			if(myPositionLast == myPositionCurrent && poliPositionCurrent == poliPositionLast){
+				_idling = true;
 				UpdateView (transform.position - poliPositionCurrent);
-				if(myPositionLast == myPositionCurrent)
-					_idling = true;
 			}
+		
 
 			_anim.SetBool(_isWalkingHash, !_idling);
 		}
 
-		_anim.SetBool(roughing, aggressive && inFov);
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -106,8 +107,12 @@ public class SecurityBehaviour : CharacterBehaviour {
 		aggressive = true;
 	}
 
-
-
+	IEnumerator stunJournalist(float duration){
+		photographer.GetComponent<PlayerController>().Stunned = true;
+		yield return new WaitForSeconds(2.0f);
+		photographer.GetComponent<PlayerController>().Stunned = false;
+	}
+	
 	Vector3 getGuardPosition(){
 		return politician.transform.position + guardOffset;
 		//return politician.transform.position + (Vector3)Random.insideUnitCircle * guardRadius;

@@ -3222,6 +3222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
   DestinationWP: {fileID: 0}
+  EventWP: {fileID: 0}
   MoveSpeed: 1
   ChanceToIdle: .349999994
   MinIdleTime: 2
@@ -3252,8 +3253,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .5
-  m_Center: {x: 0, y: .5}
+  m_Radius: .300000012
+  m_Center: {x: 0, y: .300000012}
 --- !u!95 &146882781
 Animator:
   serializedVersion: 3
@@ -5757,10 +5758,9 @@ GameObject:
   - 50: {fileID: 356003344}
   - 114: {fileID: 356003348}
   - 58: {fileID: 356003349}
-  - 58: {fileID: 356003345}
   m_Layer: 10
   m_Name: security_detail
-  m_TagString: Untagged
+  m_TagString: Security
   m_Icon: {fileID: -1376725286, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5798,17 +5798,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &356003345
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 356003342}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Radius: .5
-  m_Center: {x: 0, y: .49000001}
 --- !u!95 &356003346
 Animator:
   serializedVersion: 3
@@ -5852,6 +5841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
   DestinationWP: {fileID: 0}
+  EventWP: {fileID: 0}
   MoveSpeed: 1.20000005
   ChanceToIdle: 0
   MinIdleTime: 0
@@ -5859,7 +5849,6 @@ MonoBehaviour:
   politician: {fileID: 146882776}
   photographer: {fileID: 2095148445}
   guardOffset: {x: 1, y: 1, z: 0}
-  aggressive: 0
 --- !u!58 &356003349
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10478,6 +10467,10 @@ Prefab:
     - target: {fileID: 11405012, guid: 31376cdde5c1ce24098ea08604c19c85, type: 2}
       propertyPath: verticesDirty
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 139344, guid: 31376cdde5c1ce24098ea08604c19c85, type: 2}
+      propertyPath: m_TagString
+      value: Security
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -19289,7 +19282,7 @@ MonoBehaviour:
     direction: {x: 0, y: 1, z: 0}
     flagNormalUpdate: 0
     isEnd: 0
-    isStart: 1
+    isStart: 0
   - parent: {fileID: 0}
     pointA:
       position: {x: 17.9150009, y: 8.52499962, z: 6}
@@ -19300,7 +19293,7 @@ MonoBehaviour:
     normal: {x: .995495439, y: .0948094353, z: 0}
     direction: {x: -.0948094353, y: .995495439, z: 0}
     flagNormalUpdate: 0
-    isEnd: 1
+    isEnd: 0
     isStart: 0
   - parent: {fileID: 0}
     pointA:
@@ -19361,7 +19354,7 @@ MonoBehaviour:
     direction: {x: -.0856216624, y: -.996327758, z: 0}
     flagNormalUpdate: 0
     isEnd: 0
-    isStart: 0
+    isStart: 1
   - parent: {fileID: 0}
     pointA:
       position: {x: 14.085, y: 8.47500038, z: 6}
@@ -19456,8 +19449,8 @@ MonoBehaviour:
     normal: {x: 0, y: -1, z: 0}
     direction: {x: 1, y: 0, z: 0}
     flagNormalUpdate: 0
-    isEnd: 0
-    isStart: 1
+    isEnd: 1
+    isStart: 0
   - parent: {fileID: 0}
     pointA:
       position: {x: 17.7749996, y: 2.16499996, z: 6}
@@ -20657,7 +20650,7 @@ GameObject:
   - 58: {fileID: 1363454446}
   m_Layer: 10
   m_Name: security_detail
-  m_TagString: Untagged
+  m_TagString: Security
   m_Icon: {fileID: -1376725286, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20705,6 +20698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWP: {fileID: 0}
   DestinationWP: {fileID: 0}
+  EventWP: {fileID: 0}
   MoveSpeed: 1.20000005
   ChanceToIdle: 0
   MinIdleTime: 0
@@ -20712,7 +20706,6 @@ MonoBehaviour:
   politician: {fileID: 146882776}
   photographer: {fileID: 2095148445}
   guardOffset: {x: -1, y: 1, z: 0}
-  aggressive: 0
 --- !u!50 &1363454448
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -23721,6 +23714,10 @@ Prefab:
     - target: {fileID: 11405014, guid: 31376cdde5c1ce24098ea08604c19c85, type: 2}
       propertyPath: guardOffset.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 139344, guid: 31376cdde5c1ce24098ea08604c19c85, type: 2}
+      propertyPath: m_TagString
+      value: Security
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31376cdde5c1ce24098ea08604c19c85, type: 2}

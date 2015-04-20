@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 	public float MoveSpeed;
 	public float ViewRotationStrength;
 
+	public bool Stunned = false;
+
 	Animator _anim;
 	Transform _view;
 	PlayerVirtualCamera _playerCam;
@@ -32,9 +34,11 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
 	{
-		UpdateCameraShoot();
-		UpdateMovement();
-		UpdateView();
+		if (!Stunned) {
+			UpdateCameraShoot ();
+			UpdateMovement ();
+			UpdateView();
+		}
 	}
 	
 	void UpdateCameraShoot ()
@@ -114,4 +118,5 @@ public class PlayerController : MonoBehaviour
 		
 		_view.rotation = Quaternion.Lerp(_view.rotation, desiredRotation, ViewRotationStrength * Time.deltaTime);
 	}
+
 }
