@@ -29,9 +29,9 @@ public class SecurityBehaviour : CharacterBehaviour {
 
 		_view = transform.FindChild ("view");
 		_anim = GetComponent<Animator>();
-
+		
 		//politician = GameObject.FindObjectOfType<PoliticianController>();
-		//photographer = GameObject.FindObjectOfType<PlayerController> ();
+		photographer = GameObject.FindObjectOfType<PlayerController> ().gameObject;
 
 		poliPositionLast = politician.transform.position;
 		poliPositionCurrent = politician.transform.position;

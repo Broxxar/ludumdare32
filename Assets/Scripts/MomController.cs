@@ -54,9 +54,6 @@ public class MomController : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		anim.SetTrigger (stepCandyHash);
 		politician.moveTarget = transform.position + new Vector3 (2,0,0);
-		yield return new WaitForSeconds (2);
-
-		anim.SetTrigger (stepCandyHash);
 	}
 
 

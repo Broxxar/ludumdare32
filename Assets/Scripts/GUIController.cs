@@ -28,7 +28,7 @@ public class GUIController : MonoBehaviour
 		_fadePlane = transform.FindChild("fade_plane").GetComponent<Image>();
 	}
 
-	public void SpawnPolaroid (Sprite photoSprite)
+	public void SpawnPolaroid (Sprite photoSprite, bool valid, bool isGood)
 	{
 		GameObject newPolaroid = GameObject.Instantiate(PolaroidPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		newPolaroid.name = PolaroidPrefab.name;
@@ -36,6 +36,14 @@ public class GUIController : MonoBehaviour
 		
 		newPolaroid.transform.FindChild("image").GetComponent<Image>().sprite = photoSprite;
 		newPolaroid.GetComponent<Animator>().SetTrigger("Spawn");
+		
+		if (valid)
+		{
+			if (isGood)
+				newPolaroid.GetComponent<Animator>().SetBool("PhotoPassed", true);
+			else
+				newPolaroid.GetComponent<Animator>().SetBool("PhotoFailed", true);
+		}
 		
 		StartCoroutine(DespawnAsync(newPolaroid));
 	}

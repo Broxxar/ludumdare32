@@ -24,8 +24,16 @@ public class SceneController : MonoBehaviour
 	{
 		GUIController.Instance.FadeToBlack();
 		yield return new WaitForSeconds (1.1f);
+		
+		if (sceneName == "victory_screen")
+		{
+			foreach (Renderer r in playerTransform.GetComponentsInChildren<Renderer>())
+				r.enabled = false;
+		}
+
 		Application.LoadLevel(sceneName);
-		playerTransform.position = newPosition;
+		if (playerTransform != null)
+			playerTransform.position = newPosition;
 		GUIController.Instance.FadeInFromBlack();
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 	
-	
 public enum PoliticianState{laughing, walking, hurtDog, holdingCandy, givingCandy, done};
 
 public class PoliticianController : MonoBehaviour {
@@ -26,10 +25,9 @@ public class PoliticianController : MonoBehaviour {
 	int roughUpHash = Animator.StringToHash("IsRough");
 	int stepCandyHash = Animator.StringToHash("StepCandy");
 
-
-
 	// Use this for initialization
 	void Start () {
+		GUIController.Instance.HideText();
 		anim = GetComponent<Animator>();
 		anim.SetBool (isWalkingHash, true);
 		EventManager.Instance.OnEventChange += HandleOnEventChange;
@@ -174,8 +172,25 @@ public class PoliticianController : MonoBehaviour {
 	//	Route[routeIndex].GetComponent<EventWayPoint>().HasFinished = true;
 	//	Debug.Log ("event Over");
 		EventEnds ();
+		
+		StartCoroutine(Magic());
 	}
-
+	
+	public LoadSceneTrigger NewsTrigger;
+	
+	IEnumerator Magic ()
+	{
+		NewsTrigger.collider2D.enabled = true;
+		GUIController.Instance.ShowText("Head back to the News Building!");
+		yield return new WaitForSeconds(0.5f);
+		yield return StartCoroutine(WaitForClick());
+	}
+	
+	IEnumerator WaitForClick ()
+	{
+		while (!Input.GetMouseButtonDown(0))
+			yield return null;	
+	}
 
 	public PoliticianState GetState(){
 		return currentState;

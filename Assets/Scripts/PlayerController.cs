@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 	PlayerVirtualCamera _playerCam;
 	BoxCollider2D _photoCollider;
 
-	Dictionary<StoryEvents, PhotoInfo> SavedPhotos = new Dictionary<StoryEvents, PhotoInfo>();
+	public Dictionary<StoryEvents, PhotoInfo> SavedPhotos = new Dictionary<StoryEvents, PhotoInfo>();
 
 	int _cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 		
 		Sprite photoSprite = Sprite.Create(_playerCam.RecentPhoto, new Rect(0,0, 512, 512), Vector2.zero);
-		GUIController.Instance.SpawnPolaroid(photoSprite);
+		
 
 		//Evaluate Photo
 		bool isPhotoGood = false;
@@ -91,7 +91,6 @@ public class PlayerController : MonoBehaviour
 
 					if (isPhotoValid)
 					{
-					
 						PhotoInfo newPhotoInfo = new PhotoInfo
 						{
 							PhotoSprite = photoSprite,
@@ -107,16 +106,13 @@ public class PlayerController : MonoBehaviour
 						else
 						{
 							SavedPhotos.Add(currentEvent, newPhotoInfo);
-						}
-						
+						}	
 					}
-
-					Debug.Log ("Good: " + isPhotoGood);
-					Debug.Log ("Valid: " + isPhotoValid);
-
 				}
 			}
 		}
+		
+		GUIController.Instance.SpawnPolaroid(photoSprite, isPhotoValid, isPhotoGood);
 
 		yield return new WaitForSeconds(0.45f);
 		
