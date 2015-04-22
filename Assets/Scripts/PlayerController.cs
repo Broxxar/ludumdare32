@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 	public delegate void TakingPhoto();
 	public static event TakingPhoto OnTakePhoto = delegate { };
-
+	public AudioClip CameraSound;
 	public float MoveSpeed;
 	public float ViewRotationStrength;
 
@@ -66,13 +66,13 @@ public class PlayerController : MonoBehaviour
 		_canTakePicture = false;
 		_anim.SetTrigger(_cameraFlashHash);	
 		yield return new WaitForSeconds(0.3f);
-		
+		audio.PlayOneShot(CameraSound);
+		GUIController.Instance.CameraFlash();
 		// Take Photo
 		_playerCam.Capture();
 		yield return new WaitForEndOfFrame();
 		
 		Sprite photoSprite = Sprite.Create(_playerCam.RecentPhoto, new Rect(0,0, 512, 512), Vector2.zero);
-		
 
 		//Evaluate Photo
 		bool isPhotoGood = false;
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 			{
 				if(wp != null && wp.ThisEvent == currentEvent){
 
-					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_photoCollider, wp, GameObject.FindObjectOfType<PoliticianController>().GetState());
+					isPhotoGood = PhotoEvalHelper.EvaluatePhoto(_playerCam, wp, GameObject.FindObjectOfType<PoliticianController>().GetState());
 					isPhotoValid = PhotoEvalHelper.ValidatePhoto(_photoCollider, wp);
 
 					if (isPhotoValid)

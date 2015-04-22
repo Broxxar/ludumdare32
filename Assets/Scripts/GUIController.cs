@@ -18,6 +18,7 @@ public class GUIController : MonoBehaviour
 	int _isVisibleHash = Animator.StringToHash("IsVisible");
 	Text _textPanelText;
 	Image _fadePlane;
+	Image _flashPlane;
 	
 	void Awake ()
 	{
@@ -26,6 +27,7 @@ public class GUIController : MonoBehaviour
 		_textPanelText = transform.FindChild("text_panel/text").GetComponent<Text>();
 		_polaroids = transform.FindChild("polaroids");
 		_fadePlane = transform.FindChild("fade_plane").GetComponent<Image>();
+		_flashPlane = transform.FindChild("flash_plane").GetComponent<Image>();
 	}
 
 	public void SpawnPolaroid (Sprite photoSprite, bool valid, bool isGood)
@@ -74,6 +76,20 @@ public class GUIController : MonoBehaviour
 		for (float t = 0; t <= 1.0f; t += Time.deltaTime)
 		{
 			_fadePlane.color = Color.Lerp(start, end, t);
+			yield return null;
+		}
+	}
+	
+	public void CameraFlash ()
+	{
+		StartCoroutine(CrossFadeColor(Color.white, Color.clear));
+	}
+	
+	IEnumerator CameraFlashAsync (Color start, Color end)
+	{
+		for (float t = 0; t <= 0.25f; t += Time.deltaTime)
+		{
+			_fadePlane.color = Color.Lerp(start, end, t * 4);
 			yield return null;
 		}
 	}
