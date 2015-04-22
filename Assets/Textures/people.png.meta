@@ -41,6 +41,7 @@ TextureImporter:
     21300072: babby_cry
     21300074: stroller_wheel
     21300076: exclaim_point
+    21300078: stun_star
     21300080: babby_arm
   serializedVersion: 2
   mipmaps:
@@ -462,6 +463,16 @@ TextureImporter:
         height: 46
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stun_star
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 229
+        width: 35
+        height: 34
+      alignment: 9
+      pivot: {x: .502857327, y: .458824158}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

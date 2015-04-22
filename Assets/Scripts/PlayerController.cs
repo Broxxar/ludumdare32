@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 	public float MoveSpeed;
 	public float ViewRotationStrength;
 
-	public bool Stunned = false;
+	bool _stunned = false;
 	public bool Frozen = false;
 
 	Animator _anim;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
 	int _cameraFlashHash = Animator.StringToHash("CameraFlash");
 	int _isWalkingHash = Animator.StringToHash("IsWalking");
+	int _isStunnedHash = Animator.StringToHash("IsStunned");
 
 	bool _canTakePicture = true;
 
@@ -37,7 +38,9 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
 	{
-		if (!Stunned && !Frozen)
+		_anim.SetBool(_isStunnedHash, _stunned);
+	
+		if (!_stunned && !Frozen)
 		{
 			UpdateCameraShoot ();
 			UpdateMovement ();
@@ -118,6 +121,18 @@ public class PlayerController : MonoBehaviour
 		
 		// Post Photo
 		_canTakePicture = true;
+	}
+	
+	public void Stun ()
+	{
+		StartCoroutine(StunAsync());
+	}
+	
+	IEnumerator StunAsync ()
+	{
+		_stunned = true;
+		yield return new WaitForSeconds(3.0f);
+		_stunned = false;
 	}
 	
 	void UpdateMovement ()

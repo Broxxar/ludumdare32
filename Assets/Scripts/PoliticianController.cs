@@ -11,18 +11,16 @@ public class PoliticianController : MonoBehaviour {
 	public PoliticianState currentState;
 	public MomController mom;
 
-
 	float moveSpeed = 1.0f;
 	int routeIndex=0;
 	bool performedEvent = false;
-
 	
 	//animationVars
 	Animator anim;
-	int cameraFlashHash = Animator.StringToHash("CameraFlash");
+	
 	int isWalkingHash = Animator.StringToHash("IsWalking");
-	int stepRibbonHash = Animator.StringToHash("StepRibbon");
 	int roughUpHash = Animator.StringToHash("IsRough");
+	int stepRibbonHash = Animator.StringToHash("StepRibbon");
 	int stepCandyHash = Animator.StringToHash("StepCandy");
 
 	// Use this for initialization
@@ -152,7 +150,6 @@ public class PoliticianController : MonoBehaviour {
 		currentState = PoliticianState.walking;
 		anim.SetBool (roughUpHash, false);
 
-
 		//Debug.Log ("event Over");
 		EventManager.Instance.SetEventState (StoryEvents.HotDogOver);
 
@@ -160,17 +157,15 @@ public class PoliticianController : MonoBehaviour {
 
 	}
 
-	IEnumerator StealCandyEvent(){
-		//Run animation
-		//wait for it to end
+	IEnumerator StealCandyEvent()
+	{
 		yield return new WaitForSeconds (.50f);
 		currentState = PoliticianState.givingCandy;
 		anim.SetTrigger (stepCandyHash);
 		EventManager.Instance.SetEventState (StoryEvents.movingBetween);
 		yield return new WaitForSeconds (2.0f);
 		anim.SetTrigger (stepCandyHash);
-	//	Route[routeIndex].GetComponent<EventWayPoint>().HasFinished = true;
-	//	Debug.Log ("event Over");
+		yield return new WaitForSeconds (2.05f);
 		EventEnds ();
 		
 		StartCoroutine(Magic());

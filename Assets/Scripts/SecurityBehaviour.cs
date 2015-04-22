@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SecurityBehaviour : CharacterBehaviour {
-
+public class SecurityBehaviour : CharacterBehaviour
+{
 	//the politician
 	public GameObject politician;
-	//the photographer
-	public GameObject photographer;
 
 	//radius where security gaurds 
 	public Vector3 guardOffset = new Vector3(1,1,0);
@@ -23,6 +21,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 	private int roughing = Animator.StringToHash("IsRough");
 
 	Transform _view;
+	PlayerController _player;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +30,7 @@ public class SecurityBehaviour : CharacterBehaviour {
 		_anim = GetComponent<Animator>();
 		
 		//politician = GameObject.FindObjectOfType<PoliticianController>();
-		photographer = GameObject.FindObjectOfType<PlayerController> ().gameObject;
+		_player = GameObject.FindObjectOfType<PlayerController>();
 
 		poliPositionLast = politician.transform.position;
 		poliPositionCurrent = politician.transform.position;
@@ -55,12 +54,12 @@ public class SecurityBehaviour : CharacterBehaviour {
 
 			_anim.SetBool(roughing, true);
 
-			Move (photographer.transform.position);
-			UpdateView(photographer.transform.position - transform.position);
+			Move (_player.transform.position);
+			UpdateView(_player.transform.position - transform.position);
 
-			if (Vector2.Distance(this.transform.position, photographer.transform.position) < 0.2){
-
-				StartCoroutine( stunJournalist (3.0f));
+			if (Vector2.Distance(this.transform.position, _player.transform.position) < 0.2)
+			{
+				_player.Stun();
 				aggressive = false;
 			}
 
@@ -109,12 +108,6 @@ public class SecurityBehaviour : CharacterBehaviour {
 		if (inFov) {
 			aggressive = true;
 		}
-	}
-
-	IEnumerator stunJournalist(float duration){
-		photographer.GetComponent<PlayerController>().Stunned = true;
-		yield return new WaitForSeconds(2.0f);
-		photographer.GetComponent<PlayerController>().Stunned = false;
 	}
 	
 	Vector3 getGuardPosition(){

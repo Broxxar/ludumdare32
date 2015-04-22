@@ -38,6 +38,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: IsStunned
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -53,6 +59,17 @@ AnimatorController:
   - serializedVersion: 3
     m_Name: Camera
     m_StateMachine: {fileID: 110786206}
+    m_Mask: {fileID: 0}
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_StateMachineMotionSetIndex: 0
+    m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 3
+    m_Name: Stun Stars
+    m_StateMachine: {fileID: 110760726}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -285,6 +302,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110137626
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110237024}
+  m_DstState: {fileID: 110200990}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110142912
 Transition:
   serializedVersion: 2
@@ -329,6 +366,30 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110153920
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110209118}
+  m_DstState: {fileID: 110201434}
+  m_TransitionDuration: .200000003
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .800000012
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsWalking
+    m_EventTreshold: 0
+    m_ExitTime: .800000012
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110156676
 Transition:
   serializedVersion: 2
@@ -349,6 +410,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110160448
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110200990}
+  m_DstState: {fileID: 110237024}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110166800
 Transition:
   serializedVersion: 2
@@ -365,6 +446,30 @@ Transition:
     m_ConditionEvent: StepCandy
     m_EventTreshold: 0
     m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110174824
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110209118}
+  m_DstState: {fileID: 110259468}
+  m_TransitionDuration: .200000003
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .800000012
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsWalking
+    m_EventTreshold: 0
+    m_ExitTime: .800000012
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -409,6 +514,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110197086
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110209118}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110199130
 Transition:
   serializedVersion: 2
@@ -429,6 +554,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110199702
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110200990}
+  m_DstState: {fileID: 110237024}
+  m_TransitionDuration: .114926495
+  m_TransitionOffset: .135073423
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsStunned
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1102 &110200736
 State:
   m_ObjectHideFlags: 3
@@ -441,6 +586,21 @@ State:
   - {fileID: 7400000, guid: 561c22e7e0714ed4f981a6564ba04aaa, type: 2}
   m_ParentStateMachine: {fileID: 110701434}
   m_Position: {x: 348, y: 264, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110200990
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: stun_stars_visible
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 73ac1060f17ed6a4ab558dca3dd54d12, type: 2}
+  m_ParentStateMachine: {fileID: 110760726}
+  m_Position: {x: 294, y: 177, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -474,6 +634,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110209118
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: journalist_stunned
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: cc3209967b4ad7546b2047e97e233a6f, type: 2}
+  m_ParentStateMachine: {fileID: 110701434}
+  m_Position: {x: 72, y: 0, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110217596
 State:
   m_ObjectHideFlags: 3
@@ -486,6 +661,21 @@ State:
   - {fileID: 7400000, guid: 164a71ca8ffd92a4096ee0b4be1eceff, type: 2}
   m_ParentStateMachine: {fileID: 110701434}
   m_Position: {x: 36, y: 312, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110237024
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: stun_stars_hidden
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: b9835275584144b42869038bf95644d1, type: 2}
+  m_ParentStateMachine: {fileID: 110760726}
+  m_Position: {x: 48, y: 180, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -545,7 +735,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 84ed86f1842113b4aaa25cb21243708a, type: 2}
   m_ParentStateMachine: {fileID: 110701434}
-  m_Position: {x: -192, y: 396, z: 0}
+  m_Position: {x: -228, y: 408, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -628,18 +818,20 @@ StateMachine:
   - {fileID: 110217596}
   - {fileID: 110265596}
   - {fileID: 110205632}
+  - {fileID: 110209118}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 110209118}
+      second:
+      - {fileID: 110153920}
+      - {fileID: 110174824}
+    data:
       first: {fileID: 0}
       second:
       - {fileID: 110199130}
-    data:
-      first: {fileID: 110237066}
-      second:
-      - {fileID: 110121274}
-      - {fileID: 110142912}
+      - {fileID: 110197086}
     data:
       first: {fileID: 110201434}
       second:
@@ -651,6 +843,11 @@ StateMachine:
       - {fileID: 110129048}
       - {fileID: 110100000}
       - {fileID: 110156676}
+    data:
+      first: {fileID: 110237066}
+      second:
+      - {fileID: 110121274}
+      - {fileID: 110142912}
     data:
       first: {fileID: 110296570}
       second:
@@ -681,6 +878,31 @@ StateMachine:
       - {fileID: 110111943}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -216, y: 0, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+--- !u!1107 &110760726
+StateMachine:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Stun Stars
+  m_DefaultState: {fileID: 110237024}
+  m_States:
+  - {fileID: 110200990}
+  - {fileID: 110237024}
+  m_ChildStateMachine: []
+  m_ChildStateMachinePosition: []
+  m_OrderedTransitions:
+    data:
+      first: {fileID: 110237024}
+      second:
+      - {fileID: 110137626}
+    data:
+      first: {fileID: 110200990}
+      second:
+      - {fileID: 110199702}
+  m_MotionSetCount: 1
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
 --- !u!1107 &110786206
 StateMachine:
