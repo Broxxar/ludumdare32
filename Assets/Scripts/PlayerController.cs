@@ -9,14 +9,22 @@ public class PlayerController : MonoBehaviour
 	public AudioClip CameraSound;
 	public float MoveSpeed;
 	public float ViewRotationStrength;
-
+	public float MinZoomSize;
+	public float MaxZoomSize;
+	public AudioClip StunSound;
+	
 	bool _stunned = false;
 	public bool Frozen = false;
 
+	AudioSource _audioSrc;
 	Animator _anim;
 	Transform _view;
 	PlayerVirtualCamera _playerCam;
+	Camera _playerCamCamera;
+	AudioSource _zoomAudioSrc;
+	float _zoomSize;
 	BoxCollider2D _photoCollider;
+	CameraController _camController;
 
 	public Dictionary<StoryEvents, PhotoInfo> SavedPhotos = new Dictionary<StoryEvents, PhotoInfo>();
 
@@ -28,10 +36,15 @@ public class PlayerController : MonoBehaviour
 
 	void Awake ()
 	{
+		_audioSrc = GetComponent<AudioSource>();
 		_anim = GetComponent<Animator>();
 		_view = transform.FindChild("view");
 		_playerCam = _view.GetComponentInChildren<PlayerVirtualCamera>();
+		_playerCamCamera = _playerCam.GetComponent<Camera>();
+		_zoomAudioSrc = _playerCam.GetComponent<AudioSource>();
+		_zoomSize = _playerCamCamera.orthographicSize;
 		_photoCollider = _view.GetComponentInChildren<BoxCollider2D>();
+		_camController = FindObjectOfType<CameraController>();
 
 		DontDestroyOnLoad(gameObject);
 	}
@@ -42,9 +55,10 @@ public class PlayerController : MonoBehaviour
 	
 		if (!_stunned && !Frozen)
 		{
-			UpdateCameraShoot ();
-			UpdateMovement ();
+			UpdateCameraShoot();
+			UpdateMovement();
 			UpdateView();
+			UpdateZoom();
 		}
 	}
 	
@@ -59,7 +73,6 @@ public class PlayerController : MonoBehaviour
 		if (_canTakePicture)
 		{
 			StartCoroutine (TakePhotoAsync ());
-			OnTakePhoto();
 		}
 	}
 	
@@ -72,6 +85,7 @@ public class PlayerController : MonoBehaviour
 		audio.PlayOneShot(CameraSound);
 		GUIController.Instance.CameraFlash();
 		// Take Photo
+		OnTakePhoto();
 		_playerCam.Capture();
 		yield return new WaitForEndOfFrame();
 		
@@ -125,13 +139,16 @@ public class PlayerController : MonoBehaviour
 	
 	public void Stun ()
 	{
-		StartCoroutine(StunAsync());
+		if (!_stunned)
+			StartCoroutine(StunAsync());
 	}
 	
 	IEnumerator StunAsync ()
 	{
 		_stunned = true;
-		yield return new WaitForSeconds(3.0f);
+		_camController.Shake();
+		_audioSrc.PlayOneShot(StunSound);
+		yield return new WaitForSeconds(2.5f);
 		_stunned = false;
 	}
 	
@@ -170,4 +187,11 @@ public class PlayerController : MonoBehaviour
 		_view.rotation = Quaternion.Lerp(_view.rotation, desiredRotation, ViewRotationStrength * Time.deltaTime);
 	}
 
+	void UpdateZoom ()
+	{
+		_zoomSize = Mathf.Clamp(_zoomSize - Input.GetAxis("Mouse ScrollWheel"),MinZoomSize, MaxZoomSize);
+		_playerCamCamera.orthographicSize = Mathf.Lerp(_playerCamCamera.orthographicSize, _zoomSize, Time.deltaTime * 5);
+		_playerCam.transform.localScale = Vector3.one * _playerCamCamera.orthographicSize;
+		_zoomAudioSrc.volume = Mathf.Abs(_playerCamCamera.orthographicSize - _zoomSize);
+	}
 }

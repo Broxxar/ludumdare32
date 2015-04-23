@@ -9,10 +9,11 @@ public class CameraController : MonoBehaviour
 	public float FollowStrength;
 	
 	Camera _camera;
+	bool _shaking;
 	
 	void Awake ()
 	{
-		_camera = GetComponent<Camera>();	
+		_camera = GetComponent<Camera>();
 		Vector3 newPosition = FollowTarget.position;
 		newPosition.z = FixedZ;
 		transform.position = newPosition;
@@ -34,5 +35,26 @@ public class CameraController : MonoBehaviour
 			
 		newPosition.z = FixedZ;
 		transform.position = newPosition;
+	}
+	
+	public void Shake ()
+	{
+		if (!_shaking)
+			StartCoroutine(ShakeAsync());
+	}
+	
+	IEnumerator ShakeAsync ()
+	{
+		_shaking = true;
+		
+		for (float t = 0; t < 0.2f; t += Time.deltaTime)
+		{
+			Vector3 shakePos = transform.position;
+			transform.position = shakePos + (Vector3)Random.insideUnitCircle * 0.2f;
+			yield return null;
+			transform.position = shakePos;
+		}
+		
+		_shaking = false;
 	}
 }

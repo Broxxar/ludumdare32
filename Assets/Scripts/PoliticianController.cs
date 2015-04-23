@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 	
-public enum PoliticianState{laughing, walking, hurtDog, holdingCandy, givingCandy, done};
+public enum PoliticianState
+{
+	laughing,
+	walking,
+	hurtDog,
+	holdingCandy,
+	givingCandy,
+	done
+}
 
 public class PoliticianController : MonoBehaviour {
 
@@ -37,6 +45,7 @@ public class PoliticianController : MonoBehaviour {
 	void Update(){
 
 		StoryEvents currentEvent = EventManager.Instance.currentEvent;
+		
 		if((Vector2)transform.position != (Vector2)moveTarget){
 
 			if(currentEvent == StoryEvents.HotDog){
@@ -96,7 +105,6 @@ public class PoliticianController : MonoBehaviour {
 	void HandleOnEventChange ()
 	{
 		performedEvent = false;
-
 	}
 
 	IEnumerator StartRunningWithCandy(){

@@ -12,7 +12,10 @@ public class GUIController : MonoBehaviour
 	}
 
 	public GameObject PolaroidPrefab;
-
+	public AudioClip ShowTextSound;
+	public AudioClip HideTextSound;
+	
+	AudioSource _audio;
 	Transform _polaroids;
 	Animator _textPanelAnim;
 	int _isVisibleHash = Animator.StringToHash("IsVisible");
@@ -28,6 +31,7 @@ public class GUIController : MonoBehaviour
 		_polaroids = transform.FindChild("polaroids");
 		_fadePlane = transform.FindChild("fade_plane").GetComponent<Image>();
 		_flashPlane = transform.FindChild("flash_plane").GetComponent<Image>();
+		_audio = GetComponent<AudioSource>();
 	}
 
 	public void SpawnPolaroid (Sprite photoSprite, bool valid, bool isGood)
@@ -52,46 +56,40 @@ public class GUIController : MonoBehaviour
 	
 	public void ShowText(string textToDisplay)
 	{
+		_audio.PlayOneShot(ShowTextSound);
 		_textPanelAnim.SetBool(_isVisibleHash, true);
 		_textPanelText.text = textToDisplay;
 	}
 	
 	public void HideText()
 	{
+		_audio.PlayOneShot(HideTextSound);
 		_textPanelAnim.SetBool(_isVisibleHash, false);
 	}
 	
 	public void FadeToBlack ()
 	{
-		StartCoroutine(CrossFadeColor(Color.clear, Color.black));
+		StartCoroutine(CrossFadeColor(_fadePlane, Color.clear, Color.black, 1));
 	}
 	
 	public void FadeInFromBlack ()
 	{
-		StartCoroutine(CrossFadeColor(Color.black, Color.clear));
+		StartCoroutine(CrossFadeColor(_fadePlane, Color.black, Color.clear, 1));
 	}
 	
-	IEnumerator CrossFadeColor (Color start, Color end)
+	IEnumerator CrossFadeColor (Image plane, Color start, Color end, float duration)
 	{
-		for (float t = 0; t <= 1.0f; t += Time.deltaTime)
+		for (float t = 0; t <= duration; t += Time.deltaTime)
 		{
-			_fadePlane.color = Color.Lerp(start, end, t);
+			plane.color = Color.Lerp(start, end, t/duration);
 			yield return null;
 		}
+		plane.color = end;
 	}
 	
 	public void CameraFlash ()
 	{
-		StartCoroutine(CrossFadeColor(Color.white, Color.clear));
-	}
-	
-	IEnumerator CameraFlashAsync (Color start, Color end)
-	{
-		for (float t = 0; t <= 0.25f; t += Time.deltaTime)
-		{
-			_fadePlane.color = Color.Lerp(start, end, t * 4);
-			yield return null;
-		}
+		StartCoroutine(CrossFadeColor(_flashPlane, new Color(1,1,1,0.6f), Color.clear, 0.4f));
 	}
 	
 	IEnumerator DespawnAsync (GameObject polaroid)
